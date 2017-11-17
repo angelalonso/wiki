@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-26T21:00:07+02:00
+
+= Copy and Paste - System Clipboard =
+Created Thursday 26 May 2016
+
+== Do I have access to system clipboard? ==
+*:echo has('clipboard')*
+0 means...NO
+
+== install support for that ==
+sudo apt-get install vim-gnome
+
+== Copy to the System Clipboard from VISUAL ==
+
+Select from VISUAL (<CTRL> + V)
+Then
+*"+y*
+
+
+
+== Stack overflow ==
+The "* and "+ registers are for the system's clipboard (:help registers). Depending on your system, they may do different things. For instance, on systems that don't use X11 like OSX or Windows, the "* register is used to read and write to the system clipboard. On X11 systems both registers can be used. See :help x11-selection for more details, but basically the "* is analogous to X11's PRIMARY selection (which usually copies things you select with the mouse and pastes with the middle mouse button) and "+ is analogous to X11's CLIPBOARD selection (which is the clipboard proper).
+
+If all that went over your head, try using "*yy or "+yy to copy a line to your system's clipboard. One or the other should work. You might like to remap this to something more convenient for you. For example, you could put vnoremap <C-c> "*y in your ~/.vimrc so that you can visually select and press Ctrl+c to yank to your system's clipboard.
+
+Be aware that copying/pasting from the system clipboard will not work if :echo has('clipboard') returns 0. In this case, vim is not compiled with the +clipboard feature and you'll have to install a different version or recompile it. Some linux distros supply a minimal vim installation by default, but generally if you install the vim-gtk package you can get the extra features.
+
+You also may want to have a look at the 'clipboard' option described at :help cb. In this case you can :set clipboard=unnamed or :set clipboard=unnamedplus to make all yanking/deleting operations automatically copy to the system clipboard. This could be an inconvenience in some cases where you are storing something else in the clipboard as it will override it.
+
+To paste you can use "+p or "*p (again, depending on your system and/or desired selection) or you can map these to something else. I type them explicitly, but I often find myself in insert mode. If you're in insert mode you can still paste them with proper indentation by using <C-r><C-p>* or <C-r><C-p>+. See :help i_CTRL-R_CTRL-P.
+
+It's also worth mentioning vim's paste option (:help paste). This puts vim into a special "paste mode" that disables several other options, allowing you to easily paste into vim using your terminal emulator or multiplexer's familiar paste shortcut. Simply type :set paste to enable it, paste your content and then type :set nopaste to disable it. Alternatively, you can use the pastetoggle option to set a keycode that toggles the mode (:help pastetoggle). I recommend using registers instead of these options, but if they are still too scary this can be a convenient workaround while you're perfecting your vim chops.
+
+See :help clipboard for more detailed information.
+

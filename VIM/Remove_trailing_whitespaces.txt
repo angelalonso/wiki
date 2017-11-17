@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-11-02T12:24:36+01:00
+
+====== Remove trailing whitespaces on a whole file ======
+Created Wednesday 02 November 2016
+
+:%s/\s\+$//e
+
+===== Automate it! =====
+
+➜  vagrant git:(master) ✗ grep Buf ~/.vimrc
+au BufWritePre * :%s/\s\+$//e
+
+http://vimdoc.sourceforge.net/htmldoc/autocmd.html#BufWritePre

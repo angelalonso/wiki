@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-22T21:55:53+02:00
+
+====== Marks ======
+Created Sunday 22 May 2016
+
+===== Mark current position with letter "a" =====
+ma
+
+===== Go back to mark "a" =====
+`a
+
+===== Go back to the start of the line of mark "a" =====
+'a
+
+===== Show Marks =====
+:marks

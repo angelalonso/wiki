@@ -1,0 +1,12 @@
+= Surround a word with Commas =
+
+go from Text to 'Text':
+
+*ciw'<Ctrl>+r"'*
+
+
+== Explanation ==
+* ciw - Delete the word the cursor is on, and end up in insert mode.
+* ' - add the first quote.
+* <Ctrl>+r" - Insert the contents of the " register, aka the last yank/delete.
+* ' - add the closing quote.

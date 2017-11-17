@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-22T21:58:04+02:00
+
+====== Switch current char and the next ======
+Created Sunday 22 May 2016
+
+xp

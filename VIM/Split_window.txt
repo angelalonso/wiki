@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-26T20:58:17+02:00
+
+====== Split window ======
+Created Thursday 26 May 2016
+
+===== Open two files in two, vertically splitted, windows =====
+vim -O file1 file2
+
+===== Split vertical =====
+<CTRL>w v
+
+===== Split horizontal =====
+<CTRL>w s
+
+===== Move between "splitteds" =====
+
+==== up ====
+<CTRL>w k
+
+==== down ====
+<CTRL>w j
+
+==== left ====
+<CTRL>w l
+
+==== right ====
+<CTRL>w h
+
+
+===== Recommended: Shortcut to split vertically and focus on the new one with \w =====
+on .vimrc:
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+===== Recommended: Shortcuts to move between windows with <CTRL> + [ h | j | k | l ] =====
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+
+Originally it had a <C-W>_ at the end, as in:
+nnoremap <C-h> <C-W>h<C-W>_
+, but it does not seem to be needed

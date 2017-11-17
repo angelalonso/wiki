@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-05-25T22:35:03+02:00
+
+====== Insert ======
+Created Wednesday 25 May 2016
+
+i 	insert at the current position
+I 	insert at the beginning of line
+a 	append just after the current cursor position
+A 	append at the end of line
+o 	Open a new line below the current line
+O 	Open a new line above the current line
+
+===== remove a word and insert after that =====
+**ciw**
+
+(change inner word)
