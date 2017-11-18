@@ -1,0 +1,20 @@
+= Changing Caps =
+
+== For a character ==
+
+U -> capital letter
+u -> lowercase letter
+~ -> switch
+
+== For a word ==
+
+gUiw -> capital 
+guiw -> lowercase 
+g~iw -> switch
+
+== For a line ==
+
+gUU -> capital 
+guu -> lowercase 
+g~~ -> switch
+
