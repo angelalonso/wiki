@@ -1,0 +1,36 @@
+= MySQL =
+
+== Users ==
+=== Show users with a pattern name ===
+SELECT User FROM mysql.user where User like '%read-only-%';
+
+=== Create user with pass ===
+CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
+
+=== Delete user ===
+DROP USER 'testuser'@'%';
+
+=== Show privileges ===
+SHOW GRANTS for production_un_mx;
+
+=== Grant privileges ===
+GRANT ALL PRIVILEGES ON production_mx.* TO 'production_mx'@'%';
+
+GRANT ALL PRIVILEGES ON prod_pidgey_%.* TO 'pidgey'@'%';
+
+==== Grant Replication to a new user ====
+CREATE USER 'repl'@'%.mydomain.com' IDENTIFIED BY 'slavepass';
+GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%.mydomain.com';
+
+=== Revoke privileges ===
+revoke all privileges, grant option from 'production_sg'@'%';
+
+REVOKE SELECT ON production_%ru.* FROM 'ru_readonly'@'%';
+
+=== Change password ===
+SET PASSWORD FOR 'bob'@'%.example.org' = PASSWORD('auth_string');
+
+=== Error on creating a user after deleting it ===
+DROP USER 'testuser'@'%';
+FLUSH PRIVILEGES;
+CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
