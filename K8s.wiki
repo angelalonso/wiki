@@ -1,0 +1,50 @@
+= K8s =
+
+== GET all resources ==
+kubectl get all,configmaps,rolebindings,roles,clusterrolebindings,clusterroles,ingress,secrets,persistentvolumeclaims --all-namespaces 
+
+== Labels, add, list and remove ==
+kubectl label namespace default istio-injection=enabled
+kubectl get namespace -L istio-injection
+kubectl label namespace default istio-injection-
+
+== Namespaces, copy resources from one to another ==
+kubectl get rs,secrets -o json --namespace old | jq '.items[].metadata.namespace = "new"' | kubectl create -f -
+
+== Namespaces, show all ==
+kubectl get po --all-namespaces (NOT kubectl --all-namespaces  get po!)
+
+== Node, drain ==
+kubectl drain --ignore-daemonsets --force <node>
+
+== Pod, force delete == 
+kubectl delete pods <pod> --grace-period=0 --force
+
+== Port Forwarding ==
+kubectl -n<namespace> port-forward <pod> <PORT>
+kubectl port-forward $(kubectl get pods -l=app=grafana-prometheus-grafana -n monitoring --output=jsonpath="{.items..metadata.name}") -n monitoring 3000
+
+== RBAC, known issues ==
+### ERROR ### -> helm install --name postgres helm/default/postgres --namespace default 
+Error: release postgres failed: User "system:serviceaccount:kube-system:default" cannot get namespaces in the namespace "default". (get namespaces default)
+
+-> kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
+
+### ERROR ### -> fuzzy-marmot-nginx-ingress-controller-932055102-7dhd5         0/1       CrashLoopBackOff   7          14m
+It seems the cluster it is running with Authorization enabled (like RBAC) and there is no permissions for the ingress controller. Please check the configuration
+
+-> helm install --name main-ingress stable/nginx-ingress --set rbac.create=true
+
+== Secrets, create == 
+edit config.json (for instance)
+-> kubectl create secret generic <secret_name> --from-file=./config.json
+
+== Secrets, decode ==
+kubectl get secrets <name> -o jsonpath="{.data.common\.yml}" | base64 --decode 
+
+== Secrets, Sealed ==
+
+kubeseal <mysecret.json >mysealedsecret.json
+
+== Services, DNS ==
+service.namespace.svc.cluster.local
