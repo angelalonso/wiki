@@ -1,10 +1,22 @@
 = RAID =
 
+== Check current status ==
+cat /proc/mdstat
+
 == Force a disk to be marked as FAIL ==
 mdadm --manage /dev/md1 --fail /dev/sdb2
 
 == Get serial Number ==
 hdparm -i /dev/sdf | grep Serial
+
+== Add new Drive to RAID ==
+=== Prepare the drive's partition ===
+sgdisk /dev/sda -R /dev/sdf
+=== The drive then needs to be assigned a new random UUID: === 
+sgdisk -G /dev/sdf
+=== Finally, add the partitions to the RAID ===
+For each mdX do the following: 
+mdadm /dev/md0 -a /dev/sdb1
 
 == KNOWN ISSUE: mdadm: cannot find /dev/sdf4: No such file or directory ==
 mdadm /dev/md3 -r failed
