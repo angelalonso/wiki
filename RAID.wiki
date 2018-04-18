@@ -1,0 +1,10 @@
+= RAID =
+
+== Force a disk to be marked as FAIL ==
+mdadm --manage /dev/md1 --fail /dev/sdb2
+
+== Get serial Number ==
+hdparm -i /dev/sdf | grep Serial
+
+== KNOWN ISSUE: mdadm: cannot find /dev/sdf4: No such file or directory ==
+mdadm /dev/md3 -r failed
