@@ -20,6 +20,11 @@ kubectl drain --ignore-daemonsets --force <node>
 == Pod, force delete == 
 kubectl delete pods <pod> --grace-period=0 --force
 
+== Pod, run temporary for stuff like wget ==
+kubectl run busybox  --generator=run-pod/v1 --image=busybox --restart=Never --tty -i --env "SERVICE_IP=$SERVICE_IP" --env "SERVICE_PORT=$SERVICE_PORT"
+  - wget -qO- http://$SERVICE_IP:$SERVICE_PORT # Run in the busybox container
+kubectl delete pod busybox # Clean up the pod we created with "kubectl run"
+
 == Port Forwarding ==
 kubectl -n<namespace> port-forward <pod> <PORT>
 kubectl port-forward $(kubectl get pods -l=app=grafana-prometheus-grafana -n monitoring --output=jsonpath="{.items..metadata.name}") -n monitoring 3000
@@ -41,10 +46,16 @@ edit config.json (for instance)
 
 == Secrets, decode ==
 kubectl get secrets <name> -o jsonpath="{.data.common\.yml}" | base64 --decode 
+kubectl get secret --namespace mon grafana -o jsonpath="{.data.grafana-admin-password}" | base64 --decode ; echo
 
 == Secrets, Sealed ==
-
 kubeseal <mysecret.json >mysealedsecret.json
 
 == Services, DNS ==
 service.namespace.svc.cluster.local
+
+== Services, get IP ==
+kubectl get service nginx-service -o go-template='{{(index .spec.ports 0).port}}'
+
+== Services, get Port ==
+kubectl get service nginx-service -o go-template='{{.spec.clusterIP}}'

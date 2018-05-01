@@ -34,3 +34,14 @@ SET PASSWORD FOR 'bob'@'%.example.org' = PASSWORD('auth_string');
 DROP USER 'testuser'@'%';
 FLUSH PRIVILEGES;
 CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
+
+
+== Dumps ==
+
+=== take dumps of a complete Database ===
+
+mysqldump -u<user> -h<hostname> -P <port> -p dbname > dbname.sql
+
+=== run SQL from a file into a database ===
+
+mysql -u username -p database_name < /full/path/to/file.sql
