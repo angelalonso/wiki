@@ -1,0 +1,4 @@
+= Users =
+
+== Create a user with HOME directory ==
+useradd -m -d /PATH/TO/FOLDER USERNAME
