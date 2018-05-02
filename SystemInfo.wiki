@@ -1,0 +1,91 @@
+= System Information Gathering Tools =
+
+== Disk, percentage usage ==
+df -H | grep -vE "^Filesystem|tmpfs|cdrom" | awk '{print $5 " " $6}'
+
+== DNS Domain ==
+hostname -d
+
+== DNS Name Servers ==
+sed -e '/^$/d' /etc/resolv.conf | awk '{if (tolower($1)=="nameserver") print $2}'
+
+== FQDN ==
+hostname -f
+
+== Hostname ==
+hostname -s
+
+== IP ==
+hostname -i
+
+== IP addresses info ==
+ip -4 address show 
+
+== IP, public IP info ==
+curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+
+== Memory, top 5 mem eating processes ==
+ps auxf | sort -nr -k 4 | head -5
+
+== Memory, virtual mem statistics ==
+vmstat
+
+== Network Interfaces ==
+netstat -i | cut -d" " -f1 | egrep -v "^Kernel|Iface|lo"
+
+== Network Interface Traffic Info ==
+netstat -i
+
+== Network routing ==
+netstat -nr
+
+== Operating System ==
+uname
+
+== User Online ==
+who
+
+== Users, Last ones online ==
+last
+
+== Tools ==
+strace       - System Call Interface                                                                                                                                                                  
+ltrace       - System Libraries
+ss           - Sockets
+netstat      - Sockets, TCP/UDP, IP, Ethernet
+sysdig       - System Call Interface
+perf         - System Call Interface, System Libraries, Scheduler, CPU, I/O Bus, Applications, System Libraries, System Call Interface, VFS, File Systems, Volume Manager, Block Device Interface, Device Drivers
+sar          - Other
+/proc        - Other
+dstat        - Other
+dmesg        - Other
+mpstat       - Scheduler, CPU
+turbostat    - CPU
+rdmsr        - CPU
+tiptop       - CPU, Memory Bus, I/O Bus
+perf         - CPU, Memory Bus
+numastat     - DRAM
+ps           - CPU, Scheduler, Virtual Memory
+top          - CPU, Scheduler, Virtual Memory
+pidstat      - CPU, Scheduler, Virtual Memory, Block Device Interface
+free         - Virtual Memory, DRAM
+vmstat       - Virtual Memory, DRAM
+slabtop      - Virtual Memory, DRAM
+tcpdump      - Ethernet
+ip           - Network Controller, Port
+netstat      - Network Controller, Port
+nicstat      - Network Controller, Port
+lldptool     - Port
+snmpget      - Port
+ethtool      - Port
+iptraf       - TCP/UDP, IP, Ethernet, Port
+swapon       - Swap
+iotop        - Block Device Interface, I/O Controller, Disk
+iostat       - Block Device Interface, I/O Controller, Disk
+blktrace     - Block Device Interface, I/O Controller, Disk
+ftrace       - Applications, System Libraries, System Call Interface, VFS, File Systems, Volume Manager, Block Device Interface, Device Drivers
+stap         - Applications, System Libraries, System Call Interface, VFS, File Systems, Volume Manager, Block Device Interface, Device Drivers
+lttng        - Applications, System Libraries, System Call Interface, VFS, File Systems, Volume Manager, Block Device Interface, Device Drivers
+ebpf         - Applications, System Libraries, System Call Interface, VFS, File Systems, Volume Manager, Block Device Interface, Device Drivers
+
+
