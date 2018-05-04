@@ -1,5 +1,7 @@
 = Index =
 
+[[Elasticsearch]]
+
 [[K8s]]
 
 [[Linux]]
@@ -7,8 +9,6 @@
 [[MySQL]]
 
 [[RAID]]
-
-[[SystemInfo]]
 
 [[VIM]]
 

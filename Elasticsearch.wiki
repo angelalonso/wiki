@@ -1,0 +1,9 @@
+= Elasticsearch =
+
+== Remove a node from the cluster ==
+PUT _cluster/settings
+{
+  "transient" : {
+    "cluster.routing.allocation.exclude._ip" : "CLUSTER_HOST_IP"
+  }
+}
