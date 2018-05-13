@@ -3,10 +3,16 @@
 go from Text to 'Text':
 
 *ciw'<Ctrl>+r"'*
-
-
 == Explanation ==
 * ciw - Delete the word the cursor is on, and end up in insert mode.
 * ' - add the first quote.
 * <Ctrl>+r" - Insert the contents of the " register, aka the last yank/delete.
 * ' - add the closing quote.
+
+*ciw''<Esc>hP*
+== Explanation ==
+* ciw - Delete the word the cursor is on, and end up in insert mode.
+* '' - add both quotes.
+* <Esc> - Exit insert Mode
+* h - Move one to the left (only if you have a modified vimrc like I do)
+* P - Paste the word again
