@@ -1,0 +1,9 @@
+= Process Information =
+
+== Get enviuronment variables a process uses ==
+cat /proc/PID/environ
+
+== Get Logs ==
+ls -lha /proc/PID/fd
+
+then cat whatever you are interested in
