@@ -59,3 +59,5 @@ kubectl get service nginx-service -o go-template='{{(index .spec.ports 0).port}}
 
 == Services, get Port ==
 kubectl get service nginx-service -o go-template='{{.spec.clusterIP}}'
+
+[[DH_Kops]]

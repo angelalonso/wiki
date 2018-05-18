@@ -1,0 +1,89 @@
+= Recreate the k8s cluster =
+k8s-consumer repo
+ new folder, copy v1...
+ edit create staging cluster.sh
+ check all parameters, mainly version and NAME!
+ 
+ run the script
+ 
+ once you run it you'll get a config file, modify it and compare it 
+ anything new, confirm we need it
+ change the subnets, check no collision with other clusters
+ kops update cluster
+ kops update cluster --yes
+  
+  
+once its up, create manually an ELB called public-api-v1...
+TCP 443 -> TCP 443
+Add subnets of the utility-eu-central...
+Create Sec group and use it
+
+Idle timeout:
+3600 seconds
+
+add masters
+do not enable connection draining
+tags -> KubernetesCluster  v1.9....
+
+on the masters security group, add the API Public ELB secgroup on TCP 443
+add the Load balancer to the ASG manually (to all 3 master ASGs)
+
+Route53 -> staging.eu.fd-k8s.com
+
+create api.v1.9.... -> to the new ELB
+
+kops-st-eu export kubecfg
+Save kubeconfig in `~/.kube/config`
+
+kops-st-eu get ig
+kops-st-eu edit ig mastera,b,c ...
+  Add Custom labels (copy from previous one)
+  Add:
+spec:
+  additionalSecurityGroups:
+  - sg-asdasdasd
+  
+kops-st-eu create ig nodes-prometheus
+  Configure according to  previous one (labels, rootvolumesize, hooks...)
+  
+Do the same for spot igs
+k8s-consumer/bin/sync.sh
+
+
+
+  
+
+pfm-config
+
+bin/add-namespace -n qa1 -e staging -r eu
+utils
+
+Update serviceaccount for default (staging namespace) to be able to pull images to something like this:
+apiVersion: v1
+imagePullSecrets:
+- name: foodora-docker-hub
+kind: ServiceAccount
+metadata:
+  creationTimestamp: 2018-05-17T10:03:15Z
+  name: default
+  namespace: default
+  resourceVersion: "14613"
+  selfLink: /api/v1/namespaces/default/serviceaccounts/default
+  uid: 842efdfe-59b9-11e8-99c3-06a92df7afcc
+secrets:
+- name: default-token-qqpwc
+
+
+
+Upgrade Helm locally, then:
+hhstaging init --upgrade history-max 2
+
+create serviceaccount for tiller
+
+
+addons:
+metrics-server https://github.com/kubernetes/kops/tree/master/addons/metrics-server
+
+then:
+kube-dashboard
+
