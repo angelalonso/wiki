@@ -7,7 +7,25 @@ awk -F  ":" '/1/ {print $1}'
 (example taken from Elasticsearch's excluding a node)
 `curl -X PUT -d '{"transient":{"cluster.routing.allocation.exclude._ip":"CLUSTER_HOST_IP"}}' http://localhost:9200/_cluster/settings&pretty=true `
 
+== Change console language ==
+sudo apt-get install language-pack-en language-pack-en-base manpages
+sudo apt-get remove language-pack-de language-pack-de-base manpages-de
+sudo vim /etc/default/locale
+  LANG="en_GB.UTF-8"
+sudo dpkg-reconfigure locales
+  then add the en_GB WITHOUT removing de_DE
+  
+== Cronjobs ==
+minute hour day_of_month month day_of_week command
+* any value
+, value list separator
+- range of values
+/ step values
+
+
 [[Procs]]
+
+[[Security]]
 
 [[SystemInfo]]
 
