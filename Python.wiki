@@ -1,0 +1,6 @@
+= Python =
+
+== File, read into variable ==
+with open(FILE, 'r') as myfile:
+    token = myfile.read()
+
