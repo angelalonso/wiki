@@ -1,29 +1,32 @@
 = Docker =
 
 == Basics ==
-=== Create an image ===
-From the directory where the Dockerfile is located. Tag it on creation time:
-docker build . -t <account>/<repo>:<version>
- 
-=== Run an image ===
-docker run --name <name> -tdi /bin/bash
- 
-=== Get a container IP ===
+=== Container, Get a container IP ===
 docker inspect <container ID> | grep IPAddress
- 
-=== Tag an image ===
-(if we follow standards like the one at docker hub)
-docker tag <account>/<repo>:<version>
- 
-== Clean up ==                                                                                                                                                                                        
-CAREFUL: this cleans up deeply
-docker system prune
+
+=== Container, Get the Volumes mounted on a container ===
+docker inspect -f '{{ .Mounts }}' containerid
  
 == Docker hub ==
 Before starting
 docker login
  
-=== push an image ===
-If we followed the above mentioned tagging standards
-docker push <account>/<repo>:<version>
+=== Image, Create an image ===
+From the directory where the Dockerfile is located. Tag it on creation time:
+docker build . -t <account>/<repo>:<version>
 
+=== Image, push an image ===
+If we followed the below mentioned tagging standards
+docker push <account>/<repo>:<version>
+ 
+=== Image, Run an image ===
+docker run --name <name> -tdi /bin/bash
+ 
+=== Image, Tag an image ===
+(if we follow standards like the one at docker hub)
+docker tag <account>/<repo>:<version>
+ 
+== System, Clean up ==                                                                                                                                                                                        
+CAREFUL: this cleans up deeply
+docker system prune
+ 

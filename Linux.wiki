@@ -22,6 +22,8 @@ minute hour day_of_month month day_of_week command
 - range of values
 / step values
 
+== Files, remove spaces from name ==
+for f in *\ *; do mv "$f" "${f// /_}"; done
 
 [[Procs]]
 
