@@ -1,5 +1,8 @@
 = K8s =
 
+== Dashboard, connect to it ==
+kubectl proxy
+, then access it through 
 == GET all resources ==
 kubectl get all,configmaps,rolebindings,roles,clusterrolebindings,clusterroles,ingress,secrets,persistentvolumeclaims --all-namespaces 
 
