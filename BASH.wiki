@@ -1,0 +1,4 @@
+= BASH =
+
+== For loop, repeat x times ==
+for i in {1..15}; do <x>; done

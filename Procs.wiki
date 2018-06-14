@@ -1,9 +1,13 @@
 = Process Information =
 
-== Get enviuronment variables a process uses ==
+== Get environment variables a process uses ==
 cat /proc/PID/environ
 
 == Get Logs ==
 ls -lha /proc/PID/fd
 
 then cat whatever you are interested in
+
+== Reload a Process without killing it ==
+kill -HUP <PID>
+kill -USR2 <PID>

@@ -3,6 +3,8 @@
 == AWK, set field separator ==
 awk -F  ":" '/1/ {print $1}'
 
+== [[BASH]] ==
+
 == CURL, send put command ==
 (example taken from Elasticsearch's excluding a node)
 `curl -X PUT -d '{"transient":{"cluster.routing.allocation.exclude._ip":"CLUSTER_HOST_IP"}}' http://localhost:9200/_cluster/settings&pretty=true `
@@ -28,12 +30,12 @@ date +"%Y%m%d_%H%M%S"
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
-[[Network]]
+== [[Network]] ==
 
-[[Procs]]
+== [[Procs]] ==
 
-[[Security]]
+== [[Security]] ==
 
-[[SystemInfo]]
+== [[SystemInfo]] ==
 
-[[Users]]
+== [[Users]] ==
