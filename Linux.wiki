@@ -39,3 +39,7 @@ for f in *\ *; do mv "$f" "${f// /_}"; done
 == [[SystemInfo]] ==
 
 == [[Users]] ==
+
+== Wget, get recursively whole site ==
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --domains github.io --no-parent https://facebook.github.io/react-native/
+

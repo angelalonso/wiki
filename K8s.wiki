@@ -2,7 +2,11 @@
 
 == Dashboard, connect to it ==
 kubectl proxy
-, then access it through 
+, then access it through the IP and port you get
+
+== GET all pods on a given state ==
+kubectl get po --field-selector=status.phase==Pending
+
 == GET all resources ==
 kubectl get all,configmaps,rolebindings,roles,clusterrolebindings,clusterroles,ingress,secrets,persistentvolumeclaims --all-namespaces 
 
