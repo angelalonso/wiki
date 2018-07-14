@@ -27,6 +27,9 @@ minute hour day_of_month month day_of_week command
 == Date == 
 date +"%Y%m%d_%H%M%S"
 
+== Diff two folders quickly ==
+diff -r -q /path/to/dir1 /path/to/dir2
+
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
