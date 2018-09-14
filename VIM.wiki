@@ -10,6 +10,7 @@
 [[VIM/Remove_trailing_whitespaces]]
 [[VIM/Sort]]
 [[VIM/Split_window]]
+[[VIM/Substitute_strings]]
 [[VIM/Surround_line_w_comma]]
 [[VIM/Surround_word_w_comma]]
 [[VIM/Switch_current_char_and_the_next]]
