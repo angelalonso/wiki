@@ -1,0 +1,13 @@
+= Trobuleshooting Course =
+
+== Info about Hardware ==
+lshw
+== Info about Hardware for a group only==
+lshw -C multimedia / storage ...
+
+== Info about PCI-attached Hardware ==
+lspci
+
+== Network, release and renew DHCP lease ==
+dhclient -r eth0
+dhclient eth0

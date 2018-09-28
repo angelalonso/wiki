@@ -33,6 +33,22 @@ diff -r -q /path/to/dir1 /path/to/dir2
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
+== Files, remove a line containing String ==
+sed '/pattern to match/d' ./infile
+
+=== To directly modify the file: ===
+sed -i '/pattern to match/d' ./infile
+
+=== To directly modify the file (and create a backup): ===
+sed -i.bak '/pattern to match/d' ./infile
+
+=== For Mac OS X and FreeBSD users: ===
+sed -i '' '/pattern/d' ./infile
+
+=== For all ===
+awk '!/SnapshotId/' ${TMPFLDR}/bdmap.json > ${TMPFLDR}/bdmap.json.temp && mv ${TMPFLDR}/bdmap.json.temp ${TMPFLDR}/bdmap.json
+
+
 == [[Network]] ==
 
 == [[Procs]] ==
@@ -40,6 +56,8 @@ for f in *\ *; do mv "$f" "${f// /_}"; done
 == [[Security]] ==
 
 == [[SystemInfo]] ==
+
+== [[Troubleshooting]] ==
 
 == [[Users]] ==
 

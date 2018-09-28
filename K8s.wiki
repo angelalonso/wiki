@@ -1,5 +1,7 @@
 = K8s =
 
+== [[K8s/Troubleshooting]] ==
+
 == Dashboard, connect to it ==
 kubectl proxy
 , then access it through the IP and port you get

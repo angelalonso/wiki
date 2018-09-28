@@ -1,0 +1,4 @@
+= Troubleshooting K8s =
+
+== etcd ==
+https://github.com/kubernetes/kops/blob/master/docs/single-to-multi-master.md

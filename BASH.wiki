@@ -1,4 +1,15 @@
 = BASH =
 
+== Colors ==
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+echo -e "${RED} Do you want it to be REMOVED AUTOMATICALLY?${NOCOLOR}"
+
 == For loop, repeat x times ==
 for i in {1..15}; do <x>; done
+
+== Get the numbers from a string ==
+NUMBER=$(echo "I am 999 years old." | tr -dc '0-9')
+
+
