@@ -3,6 +3,12 @@
 == Get Interface and IP to be used to reach an IP ==
 ip route get <IP>
 
+== ping, flood ping ==
+sudo ping -f -i 3 www.google.com      #specify interval between requests 
+
+== ping, limit TTL ==
+ping -t 10 www.google.com
+
 == tcpdump capture anything to/from a host, with timestamp and loads of info == 
 tcpdump -nvvvtttt -i any -XX 'host 100.122.229.228'
 

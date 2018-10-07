@@ -30,6 +30,14 @@ date +"%Y%m%d_%H%M%S"
 == Diff two folders quickly ==
 diff -r -q /path/to/dir1 /path/to/dir2
 
+== Files, create Temporary ones ==
+mktemp
+== Files, create Temporary directory ==
+mktemp -d
+== Files, create Temporary ones WITH filename ==
+mktemp mynameXXX      #Literally, the Xs are needed it will create random three chars
+mktemp tempfileXXX --suffix=HTF    #Same as above but with HTF after the random chars
+
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
