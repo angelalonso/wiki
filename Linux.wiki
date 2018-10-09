@@ -41,6 +41,9 @@ mktemp tempfileXXX --suffix=HTF    #Same as above but with HTF after the random 
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
+== Pipe to file with sudo ==
+sudo sh -c 'ls -hal /root/ > /root/test.out'
+
 == Files, remove a line containing String ==
 sed '/pattern to match/d' ./infile
 
