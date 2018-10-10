@@ -2,4 +2,4 @@
 
 http://vim.wikia.com/wiki/Search_and_replace_in_a_visual_selection
 Select, then:
-:s/\%Vus/az/g
+:s/us/az/g
