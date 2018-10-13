@@ -3,6 +3,12 @@
 == Get Interface and IP to be used to reach an IP ==
 ip route get <IP>
 
+== Get IPs of all connected devices on LAN ==
+sudo arp-scan --interface=<your_Interface> --localnet
+
+, or
+nmap -sP 192.168.1.0/24
+
 == ping, flood ping ==
 sudo ping -f -i 3 www.google.com      #specify interval between requests 
 
