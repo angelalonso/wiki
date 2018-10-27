@@ -16,4 +16,7 @@ for i in {1..15}; do <x>; done
 == Get the numbers from a string ==
 NUMBER=$(echo "I am 999 years old." | tr -dc '0-9')
 
-
+== String, remove one from another ==
+`foo=${string#"$prefix"}`
+`foo=${foo%"$suffix"}`
+`echo "${foo}"`
