@@ -67,5 +67,15 @@ RIGHT JOIN customers ON customers.customerid=orders.customerid;
 
 
 == FULL JOIN ==
+Pulls back all records in first table and all records in second table
+SELECT productname, categoryname
+FROM products
+FULL JOIN categories ON categories.categoryid=products.categoryid;
 
 == SELF JOIN ==
+Connect a table back to itself through aliases
+E.g.: Find suppliers from same country:
+SELECT S1.companyname, S2.companyname, S1.country
+FROM suppliers S1, suppliers S2
+WHERE S1.country=S2.country AND S1.supplierid>S2.supplierid
+ORDER BY S1.country
