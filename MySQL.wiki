@@ -45,3 +45,27 @@ mysqldump -u<user> -h<hostname> -P <port> -p dbname > dbname.sql
 === run SQL from a file into a database ===
 
 mysql -u username -p database_name < /full/path/to/file.sql
+
+== JOIN ==
+=== INNER JOIN ===
+Just use JOIN
+SELECT companyname, productname, unitprice, unitsinstack
+FROM suppliers
+JOIN products ON products.supplierid=suppliers.supplierid;
+
+=== LEFT JOIN ===
+Pulls back all records in first table and matching records in second table
+SELECT productname, orderid
+FROM products
+LEFT JOIN order_details ON products.productid=order_details.productid;
+
+=== RIGHT JOIN ===
+Pulls back matching records in first table and all records in second table
+SELECT companyname, orderid
+FROM orders
+RIGHT JOIN customers ON customers.customerid=orders.customerid;
+
+
+== FULL JOIN ==
+
+== SELF JOIN ==
