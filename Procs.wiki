@@ -8,6 +8,11 @@ ls -lha /proc/PID/fd
 
 then cat whatever you are interested in
 
+== Get Processes running == 
+pgrep -laf processname
+, or
+ps aux | grep processname
+
 == Reload a Process without killing it ==
 kill -HUP <PID>
 kill -USR2 <PID>
