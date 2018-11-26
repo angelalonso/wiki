@@ -1,5 +1,82 @@
 = MySQL =
 
+== ALL ==
+SELECT productname
+FROM products
+JOIN order_details ON order_details.productid=products.productid
+WHERE order_details.unitprice*quantity > ALL (SELECT AVG(order_details.unitprice*quantity)
+                                              FROM order_details
+                                              GROUP BY productid)
+
+
+== ANY ==
+SELECT companyname
+FROM customers
+WHERE customerid = ANY (SELECT customerid FROM orders
+                        JOIN order_details ON orders.orderid=order_details.orderid
+                        WHERE quantity > 50 )
+
+
+== Dumps ==
+=== take dumps of a complete Database ===
+
+mysqldump -u<user> -h<hostname> -P <port> -p dbname > dbname.sql
+
+=== run SQL from a file into a database ===
+
+mysql -u username -p database_name < /full/path/to/file.sql
+
+
+== IN ==
+SELECT companyname
+FROM suppliers
+WHERE city IN (SELECT city FROM customers)
+
+
+== JOIN ==
+=== INNER JOIN ===
+Just use JOIN
+SELECT companyname, productname, unitprice, unitsinstack
+FROM suppliers
+JOIN products ON products.supplierid=suppliers.supplierid;
+
+=== LEFT JOIN ===
+Pulls back all records in first table and matching records in second table
+SELECT productname, orderid
+FROM products
+LEFT JOIN order_details ON products.productid=order_details.productid;
+
+=== RIGHT JOIN ===
+Pulls back matching records in first table and all records in second table
+SELECT companyname, orderid
+FROM orders
+RIGHT JOIN customers ON customers.customerid=orders.customerid;
+
+== FULL JOIN ==
+Pulls back all records in first table and all records in second table
+SELECT productname, categoryname
+FROM products
+FULL JOIN categories ON categories.categoryid=products.categoryid;
+
+== SELF JOIN ==
+Connect a table back to itself through aliases
+E.g.: Find suppliers from same country:
+SELECT S1.companyname, S2.companyname, S1.country
+FROM suppliers S1, suppliers S2
+WHERE S1.country=S2.country AND S1.supplierid>S2.supplierid
+ORDER BY S1.country
+
+
+== SUB SELECT ==
+SELECT companyname
+FROM customers
+WHERE EXISTS (SELECT customerid FROM orders
+              WHERE orders.customerid=customers.customerid AND
+              orderdate BETWEEN '1997-01-01' AND '1999-01-01' )
+              
+... and it will work with NOT EXISTS too!
+
+
 == Users ==
 === Show users with a pattern name ===
 SELECT User FROM mysql.user where User like '%read-only-%';
@@ -36,46 +113,3 @@ FLUSH PRIVILEGES;
 CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
 
 
-== Dumps ==
-
-=== take dumps of a complete Database ===
-
-mysqldump -u<user> -h<hostname> -P <port> -p dbname > dbname.sql
-
-=== run SQL from a file into a database ===
-
-mysql -u username -p database_name < /full/path/to/file.sql
-
-== JOIN ==
-=== INNER JOIN ===
-Just use JOIN
-SELECT companyname, productname, unitprice, unitsinstack
-FROM suppliers
-JOIN products ON products.supplierid=suppliers.supplierid;
-
-=== LEFT JOIN ===
-Pulls back all records in first table and matching records in second table
-SELECT productname, orderid
-FROM products
-LEFT JOIN order_details ON products.productid=order_details.productid;
-
-=== RIGHT JOIN ===
-Pulls back matching records in first table and all records in second table
-SELECT companyname, orderid
-FROM orders
-RIGHT JOIN customers ON customers.customerid=orders.customerid;
-
-
-== FULL JOIN ==
-Pulls back all records in first table and all records in second table
-SELECT productname, categoryname
-FROM products
-FULL JOIN categories ON categories.categoryid=products.categoryid;
-
-== SELF JOIN ==
-Connect a table back to itself through aliases
-E.g.: Find suppliers from same country:
-SELECT S1.companyname, S2.companyname, S1.country
-FROM suppliers S1, suppliers S2
-WHERE S1.country=S2.country AND S1.supplierid>S2.supplierid
-ORDER BY S1.country
