@@ -1,21 +1,5 @@
 = MySQL =
 
-== ALL ==
-SELECT productname
-FROM products
-JOIN order_details ON order_details.productid=products.productid
-WHERE order_details.unitprice*quantity > ALL (SELECT AVG(order_details.unitprice*quantity)
-                                              FROM order_details
-                                              GROUP BY productid)
-
-
-== ANY ==
-SELECT companyname
-FROM customers
-WHERE customerid = ANY (SELECT customerid FROM orders
-                        JOIN order_details ON orders.orderid=order_details.orderid
-                        WHERE quantity > 50 )
-
 
 == Dumps ==
 === take dumps of a complete Database ===
@@ -26,14 +10,43 @@ mysqldump -u<user> -h<hostname> -P <port> -p dbname > dbname.sql
 
 mysql -u username -p database_name < /full/path/to/file.sql
 
+== INSERT INTO ==
+Inserts into another existing table
+INSERT INTO suppliers_northamerica
+SELECT * FROM suppliers
+WHERE country IN('Argentina', 'Brazil')
 
-== IN ==
+== SELECT ALL ==
+SELECT productname
+FROM products
+JOIN order_details ON order_details.productid=products.productid
+WHERE order_details.unitprice*quantity > ALL (SELECT AVG(order_details.unitprice*quantity)
+                                              FROM order_details
+                                              GROUP BY productid)
+
+
+== SELECT ANY ==
+SELECT companyname
+FROM customers
+WHERE customerid = ANY (SELECT customerid FROM orders
+                        JOIN order_details ON orders.orderid=order_details.orderid
+                        WHERE quantity > 50 )
+
+== SELECT IN ==
 SELECT companyname
 FROM suppliers
 WHERE city IN (SELECT city FROM customers)
 
 
-== JOIN ==
+== SELECT INTO ==
+Creates a new table with some columns
+SELECT *
+INTO orders_1997
+FROM orders
+WHERE orderdate BETWEEN '1997-01-01' AND '1997-12-31'
+
+
+== SELECT JOIN ==
 === INNER JOIN ===
 Just use JOIN
 SELECT companyname, productname, unitprice, unitsinstack
