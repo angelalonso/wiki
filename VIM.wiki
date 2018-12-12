@@ -5,6 +5,7 @@
 [[VIM/Copy_and_Paste_-_System_Clipboard]]
 [[VIM/Delete_until]]
 [[VIM/Insert]]
+[[VIM/Hex]]
 [[VIM/Marks]]
 [[VIM/Move]]
 [[VIM/Remove_trailing_whitespaces]]

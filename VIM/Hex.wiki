@@ -1,0 +1,7 @@
+= VIM Open as hex =
+
+:%!xxd
+
+: enters command-line mode, % matches whole file as a range, ! filters that range through an external command, xxd is that external shell command
+
+Giving an output like this, this is split into octet count/line (octets per line may be changed with parameter -c on xxd command), hex representation, and text representation:
