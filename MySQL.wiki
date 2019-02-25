@@ -106,7 +106,7 @@ SHOW GRANTS for production_un_mx;
 === Grant privileges ===
 GRANT ALL PRIVILEGES ON production_mx.* TO 'production_mx'@'%';
 
-GRANT ALL PRIVILEGES ON prod_pidgey_%.* TO 'pidgey'@'%';
+GRANT ALL PRIVILEGES ON `prod_pidgey_%`.* TO 'pidgey'@'%';
 
 ==== Grant Replication to a new user ====
 CREATE USER 'repl'@'%.mydomain.com' IDENTIFIED BY 'slavepass';

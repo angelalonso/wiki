@@ -1,5 +1,11 @@
 = Security =
 
+== create a 16-char password == 
+pwgen 16
+
 == create a keypair ==
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f k8s-foodora-testing
+ssh-keygen -f filename -t rsa -b 4096 -C "your_email@example.com"
+
+=== quick and dirty, without a passphrase ===
+ssh-keygen -f filename -t rsa -N ''
 
