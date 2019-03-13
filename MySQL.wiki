@@ -97,6 +97,9 @@ SELECT User FROM mysql.user where User like '%read-only-%';
 === Create user with pass ===
 CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
 
+=== Change Password for user ===
+SET PASSWORD FOR 'mmikhalev'@'%' = PASSWORD('password');
+
 === Delete user ===
 DROP USER 'testuser'@'%';
 
