@@ -16,6 +16,10 @@ sudo ping -f -i 3 www.google.com      #specify interval between requests
 ping -t 10 www.google.com
 
 == SSH Tunnel ==
+=== Accessing from port 8044 in a remote server to 80 in a LAN ===
+ssh -f -N user@server.net -p 21012 -i .ssh/key -R 8044:127.0.0.1:80 -vvv
+
+=== Other docs ===
 ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
 
 The -f tells ssh to go into the background just before it executes the command. This is followed by the username and server you are logging into. The -L 2000:personal-server.com:25 is in the form of -L local-port:host:remote-port. Finally the -N instructs OpenSSH to not execute a command on the remote system.
