@@ -15,6 +15,13 @@ sudo ping -f -i 3 www.google.com      #specify interval between requests
 == ping, limit TTL ==
 ping -t 10 www.google.com
 
+== SSH Tunnel ==
+ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
+
+The -f tells ssh to go into the background just before it executes the command. This is followed by the username and server you are logging into. The -L 2000:personal-server.com:25 is in the form of -L local-port:host:remote-port. Finally the -N instructs OpenSSH to not execute a command on the remote system.
+
+This essentially forwards the local port 2000 to port 25 on personal-server.com over, with nice benefit of being encrypted. I then simply point my E-mail client to use localhost:2000 as the SMTP server and we're off to the race
+
 == tcpdump capture anything to/from a host, with timestamp and loads of info == 
 tcpdump -nvvvtttt -i any -XX 'host 100.122.229.228'
 
