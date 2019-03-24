@@ -17,7 +17,7 @@ ping -t 10 www.google.com
 
 == SSH Tunnel ==
 === Accessing from port 8044 in a remote server to 80 in a LAN ===
-ssh -f -N user@server.net -p 21012 -i .ssh/key -R 8044:127.0.0.1:80 -vvv
+ssh -f -N user@server.net -p 22 -i .ssh/key -R 8044:127.0.0.1:80 -vvv
 
 === Other docs ===
 ssh -f user@personal-server.com -L 2000:personal-server.com:25 -N
