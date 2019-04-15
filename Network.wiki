@@ -1,5 +1,14 @@
 = Network commands =
 
+== Check if a port is Open ==
+nc -vz <ip> <port>
+nmap -p <port> <ip>
+
+
+=== UDP ===
+nc -vz -u <ip> <port>
+nmap -sU -p <port> <ip>
+
 == Get Interface and IP to be used to reach an IP ==
 ip route get <IP>
 
