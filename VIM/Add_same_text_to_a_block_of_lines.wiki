@@ -14,6 +14,11 @@ Created Wednesday 25 May 2016
 
 == Append at the end ==
  - **Ctrl+V** to enter visual block mode
- - Move Up/Downto select the columns of text in the lines you want to comment.
+ - Move Up/Downto select the columns of text in the lines you want to change.
  - **Shift+a** and type the text you want to append.
  - **Esc**, wait 1 second and the inserted text will appear on every line.
+
+=== option #2 ===
+ - **Ctrl+V** to enter visual block mode
+ - Move Up/Downto select the columns of text in the lines you want to change.
+ - :s/$/text to add/g
