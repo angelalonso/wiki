@@ -16,6 +16,12 @@ INSERT INTO suppliers_northamerica
 SELECT * FROM suppliers
 WHERE country IN('Argentina', 'Brazil')
 
+
+== Monitoring == 
+=== Find out 5 most consuming queries ===
+SELECT USER, TIME, INFO FROM INFORMATION_SCHEMA.PROCESSLIST order by Time desc limit 5 \G;
+
+
 == SELECT ALL ==
 SELECT productname
 FROM products
