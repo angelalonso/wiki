@@ -9,6 +9,7 @@ CREATE TABLE test(
 == Insert JSON into Table ==
 INSERT INTO test VALUES (DEFAULT, '{"test": "This is the text", "tags": ["tag1", "tag2", "tag3"]}');
 
-
+== Update JSON on table ==
+UPDATE test SET data = '{"test": "This is the new text.", "tags": ["tagsX"]}' WHERE id = 2;
 
 
