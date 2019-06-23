@@ -1,5 +1,12 @@
 = Postgresql =
 
+== Create a user and a db ==
+sudo -u postgres createuser testuser
+sudo -u postgres createdb testdb  
+sudo -u postgres psql
+psql=# alter user <username> with encrypted password '<password>';
+psql=# grant all privileges on database <dbname> to <username> ;
+
 == Create a Table  with JSON field ==
 CREATE TABLE test(
  id serial PRIMARY KEY,
@@ -12,4 +19,8 @@ INSERT INTO test VALUES (DEFAULT, '{"test": "This is the text", "tags": ["tag1",
 == Update JSON on table ==
 UPDATE test SET data = '{"test": "This is the new text.", "tags": ["tagsX"]}' WHERE id = 2;
 
+== Dump a database ==
+pg_dump -U db_user -W -F t db_name > /path/to/your/file/dump_name.tar
 
+== Restore a database ==
+psql -U db_user db_name < dump_name.sql
