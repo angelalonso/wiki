@@ -12,6 +12,8 @@
 
 [[MySQL]]
 
+[[PostgreSQL]]
+
 [[Python]]
 
 [[RAID]]

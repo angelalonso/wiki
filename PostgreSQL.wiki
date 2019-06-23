@@ -1,0 +1,14 @@
+= Postgresql =
+
+== Create a Table  with JSON field ==
+CREATE TABLE test(
+ id serial PRIMARY KEY,
+ data jsonb
+);
+
+== Insert JSON into Table ==
+INSERT INTO test VALUES (DEFAULT, '{"test": "This is the text", "tags": ["tag1", "tag2", "tag3"]}');
+
+
+
+
