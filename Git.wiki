@@ -1,7 +1,9 @@
 = Git =
 
 == Rebase ==
-git pull --rebase origin master
+git checkout master && git pull
+git checkout <REPO>
+git merge master
 
 == revert to origin's master branch's version of file ==
 === Assuming you did not commit the file, or add it to the index, then: ===
