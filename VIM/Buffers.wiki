@@ -1,0 +1,20 @@
+= Buffers =
+
+== display open Buffers ==
+:buffers
+
+== Close one or multiple buffers ==
+:bdelete buffer1 buffer2 ...
+
+== open the next buffer in the list ==
+:bnext
+
+== open the previous buffer in the list ==
+:bprevious
+
+== open up all the available buffers == 
+:ball
+
+== run command on all buffers ==
+=== do a search replace through all buffers ===
+:bufdo %s/search_tearm/replace_term/g | update

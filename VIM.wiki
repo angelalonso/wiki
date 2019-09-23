@@ -19,4 +19,6 @@
 [[VIM/VISUAL_Search_and_Replace]]
 [[VIM/vimwiki]]
 
+[[VIM/Buffers]]
+
 [[VIM/fugitive]]
