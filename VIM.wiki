@@ -20,4 +20,3 @@
 [[VIM/vimwiki]]
 
 [[VIM/fugitive]]
-

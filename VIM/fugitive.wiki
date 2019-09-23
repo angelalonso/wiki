@@ -4,6 +4,20 @@
 :Gwrite
 :Gw
 
+== Blame for changes on current file ==
+:Gblame
+
+== Commit added changes ==
+:Gcommit
+
+== Delete the current file and the corresponding Vim buffer ==
+:Gremove
+
+== Diff on current file ==
+:Gdiff
+
+== Rename the current file and the corresponding Vim buffer ==
+:Gmove
+
 == Revert current file to last checked in version ==
 :Gread
-
