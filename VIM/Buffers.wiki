@@ -15,24 +15,54 @@
 :e <file path>
 
 == open buffer #2 in the list ==
+:b2
 :buffer2
-=== ...on a new window ===
+=== ...on a new split ===
+:sb2
 :sbuffer2
+=== ...on a new vertical split ===
+:vsp | b2
+:vert sb2
+=== ...on a new vertical split to the right ===
+:bel vsp | b2
+:vert belowright sb2
+
 
 == open the next buffer in the list ==
+:bn
 :bnext
-=== ...on a new window ===
+=== ...on a new split ===
+:sbn
 :sbnext
+=== ...on a new vertical split ===
+:vsp | bn
+:vert sbn
+=== ...on a new vertical split to the right ===
+:bel vsp | bn
+:vert belowright sbn
 
 == open the previous buffer in the list ==
+:bp
 :bprevious
-=== ...on a new window ===
+=== ...on a new split ===
+:sbp
 :sbprevious
+=== ...on a new vertical split ===
+:vsp | bp
+:vert sbp
+=== ...on a new vertical split to the right ===
+:bel vsp | bp
+:vert belowright sbp
 
 == open up all the available buffers == 
+:ba
 :ball
-=== ...on a new window ===
+=== ...on a new split ===
 :sball
+=== ...on a new vertical split ===
+:vert sba
+=== ...on a new vertical split to the right ===
+:vert belowright sba
 
 == run command on all buffers ==
 === do a search replace through all buffers ===
