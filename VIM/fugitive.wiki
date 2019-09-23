@@ -16,6 +16,12 @@
 == Diff on current file ==
 :Gdiff
 
+== Pull ==
+:Gpull <parameters>
+
+== Push ==
+:Gpush <parameters>
+
 == Rename the current file and the corresponding Vim buffer ==
 :Gmove
 
