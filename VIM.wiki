@@ -22,3 +22,5 @@
 [[VIM/Buffers]]
 
 [[VIM/fugitive]]
+
+[[VIM/Explorer]]

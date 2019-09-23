@@ -1,0 +1,17 @@
+= Explorer =
+
+== open file explorer on vertical split ==
+:Vex
+=== ...on the right ===
+:Vex!
+
+== open file explorer on horizontal split ==
+:Sex
+
+== open selected file on split ==
+=== on a split at the top ===
+o
+=== on a split at the bottom, dont switch ===
+p
+
+
