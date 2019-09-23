@@ -5,15 +5,34 @@
 
 == Close one or multiple buffers ==
 :bdelete buffer1 buffer2 ...
+:bd buffer1 buffer2 ...
+
+== Close completely one or multiple buffers ==
+:bwipeout buffer1 buffer2 ...
+:bw buffer1 buffer2 ...
+
+== open a file on a new buffer ==
+:e <file path>
+
+== open buffer #2 in the list ==
+:buffer2
+=== ...on a new window ===
+:sbuffer2
 
 == open the next buffer in the list ==
 :bnext
+=== ...on a new window ===
+:sbnext
 
 == open the previous buffer in the list ==
 :bprevious
+=== ...on a new window ===
+:sbprevious
 
 == open up all the available buffers == 
 :ball
+=== ...on a new window ===
+:sball
 
 == run command on all buffers ==
 === do a search replace through all buffers ===
