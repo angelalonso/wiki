@@ -1,0 +1,9 @@
+= fugitive =
+
+== Add current file ==
+:Gwrite
+:Gw
+
+== Revert current file to last checked in version ==
+:Gread
+

@@ -1,9 +1,4 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-11-13T16:48:02+01:00
-
 = vimwiki =
-Created Sonntag 13 November 2016
 
 == Keys ==
 

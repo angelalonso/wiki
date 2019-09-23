@@ -18,3 +18,6 @@
 [[VIM/Switch_current_line_and_the_next]]
 [[VIM/VISUAL_Search_and_Replace]]
 [[VIM/vimwiki]]
+
+[[VIM/fugitive]]
+
