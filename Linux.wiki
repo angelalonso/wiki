@@ -5,9 +5,16 @@ awk -F  ":" '/1/ {print $1}'
 
 == [[BASH]] ==
 
-== CURL, send put command ==
+== CURL ==
+=== send put command ===
 (example taken from Elasticsearch's excluding a node)
 `curl -X PUT -d '{"transient":{"cluster.routing.allocation.exclude._ip":"CLUSTER_HOST_IP"}}' http://localhost:9200/_cluster/settings&pretty=true `
+
+=== Ignore invalid SSL certs ===
+curl -k https://0.0.0.0:443
+
+=== Change the Host header ===
+curl -H "Host: example.com" http://localhost/
 
 == Change console language ==
 sudo apt-get install language-pack-en language-pack-en-base manpages
@@ -37,6 +44,9 @@ mktemp -d
 == Files, create Temporary ones WITH filename ==
 mktemp mynameXXX      #Literally, the Xs are needed it will create random three chars
 mktemp tempfileXXX --suffix=HTF    #Same as above but with HTF after the random chars
+
+== Files, soft link ==
+ln -s <DESTINATION> <NEW_LINK_FILE>
 
 == Files, remove spaces from name ==
 for f in *\ *; do mv "$f" "${f// /_}"; done
