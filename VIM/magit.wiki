@@ -1,2 +1,8 @@
 = Magit =
 
+== Check status ==
+:Magit
+
+== Stage/Unstage changes ==
+S while cursor is on top of the file name
+
