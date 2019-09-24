@@ -6,3 +6,10 @@
 == Stage/Unstage changes ==
 S while cursor is on top of the file name
 
+== Commit ==
+CC
+, add message
+CC again
+
+== push, pull... ==
+:!git <command> params
