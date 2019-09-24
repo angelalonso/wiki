@@ -1,5 +1,8 @@
 = Explorer =
 
+== open file explorer on current split ==
+:Ex
+
 == open file explorer on vertical split ==
 :Vex
 === ...on the right ===

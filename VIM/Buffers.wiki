@@ -6,6 +6,8 @@
 == Close one or multiple buffers ==
 :bdelete buffer1 buffer2 ...
 :bd buffer1 buffer2 ...
+== Close all buffers ==
+:bufdo bd
 
 == Close completely one or multiple buffers ==
 :bwipeout buffer1 buffer2 ...
@@ -13,6 +15,10 @@
 
 == open a file on a new buffer ==
 :e <file path>
+=== ... on a new split ===
+:sp filename
+=== ... on a new vertical split ===
+:vsp filename
 
 == open buffer #2 in the list ==
 :b2
