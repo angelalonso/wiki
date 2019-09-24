@@ -27,3 +27,10 @@
 
 == Revert current file to last checked in version ==
 :Gread
+
+== Status == 
+:Gstatus
+=== stage an unstaged/untracked file ===
+s
+=== unstage an unstaged/untracked file ===
+u

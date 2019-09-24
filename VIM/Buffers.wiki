@@ -64,6 +64,13 @@
 === ...on a new vertical split to the right ===
 :vert belowright sba
 
+== open a terminal on a new split ==
+:ter
+=== using a vertical split ===
+:vert ter
+=== using a vertical split to the right ===
+:bel vert ter
+
 == run command on all buffers ==
 === do a search replace through all buffers ===
 :bufdo %s/search_tearm/replace_term/g | update
