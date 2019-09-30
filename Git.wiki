@@ -19,3 +19,7 @@ git reset --hard origin/master
 == changes commited to master, not pushed yet ==
 git reset --soft HEAD~1
 
+== Remove files from a commit ==
+git reset --soft HEAD^ 
+git reset HEAD path/to/unwanted_file
+git commit -c ORIG_HEAD
