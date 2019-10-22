@@ -2,6 +2,8 @@
 
 == Get environment variables a process uses ==
 cat /proc/PID/environ
+=== Get env vars from the process within a container ===
+tr '\0' '\n' < /proc/1/environ | grep TIMEOUT
 
 == Get Logs ==
 ls -lha /proc/PID/fd
