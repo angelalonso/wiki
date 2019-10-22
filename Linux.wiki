@@ -70,6 +70,12 @@ sed -i '' '/pattern/d' ./infile
 awk '!/SnapshotId/' ${TMPFLDR}/bdmap.json > ${TMPFLDR}/bdmap.json.temp && mv ${TMPFLDR}/bdmap.json.temp ${TMPFLDR}/bdmap.json
 
 
+== Tee piping with sudo ==
+sudo tee destination/file < /source/file
+
+=== Append ===
+sudo tee -a destination/file < /source/file
+
 == [[Network]] ==
 
 == [[Procs]] ==
