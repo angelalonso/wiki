@@ -1,11 +1,19 @@
 = Git =
 
+== Changes commited to master, not pushed yet ==
+git reset --soft HEAD~1
+
 == Rebase ==
 git checkout master && git pull
 git checkout <REPO>
 git merge master
 
-== revert to origin's master branch's version of file ==
+== Remove files from a commit ==
+git reset --soft HEAD^ 
+git reset HEAD path/to/unwanted_file
+git commit -c ORIG_HEAD
+
+== Revert to origin's master branch's version of file ==
 === Assuming you did not commit the file, or add it to the index, then: ===
 git checkout -- filename
 === Assuming you added it to the index, but did not commit it, then: ===
@@ -16,10 +24,11 @@ git checkout origin/master filename
 ==== Assuming you want to blow away all commits from your branch (VERY DESTRUCTIVE): ====
 git reset --hard origin/master
 
-== changes commited to master, not pushed yet ==
-git reset --soft HEAD~1
-
-== Remove files from a commit ==
-git reset --soft HEAD^ 
-git reset HEAD path/to/unwanted_file
-git commit -c ORIG_HEAD
+== Squash all commits to rebase easily ==
+git checkout master
+git pull
+git checkout -
+git reset --soft origin/HEAD
+git commit -m "squashing commits"
+git rebase master
+git push -f 
