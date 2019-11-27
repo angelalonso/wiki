@@ -1,11 +1,5 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2016-05-26T10:04:28+02:00
-
-====== Sort ======
-Created Thursday 26 May 2016
-
-===== Sorting a Visual Block =====
+= Sort =
+== Sorting a Visual Block ==
  Select the block, then:
 
 :sort

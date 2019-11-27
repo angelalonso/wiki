@@ -1,0 +1,7 @@
+= Search =
+== Search on a visual block only ==
+Make your visual selection
+<ESC>
+?\%Vpattern
+, or
+/\%Vpattern
