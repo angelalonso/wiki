@@ -9,6 +9,7 @@
 [[VIM/Marks]]
 [[VIM/Move]]
 [[VIM/Remove_trailing_whitespaces]]
+[[VIM/Search]]
 [[VIM/Sort]]
 [[VIM/Split_window]]
 [[VIM/Substitute_strings]]
