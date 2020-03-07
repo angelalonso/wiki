@@ -1,0 +1,8 @@
+= FZF =
+
+== Fuzzy search ==
+:FZF
+
+== Navigate with ==
+<CTRL>+N
+<CTRL>+P
