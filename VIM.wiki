@@ -25,4 +25,7 @@
 [[VIM/fugitive]]
 [[VIM/magit]]
 
+[[VIM/FZF]]
+
+
 [[VIM/Explorer]]
