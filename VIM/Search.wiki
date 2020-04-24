@@ -5,3 +5,9 @@ Make your visual selection
 ?\%Vpattern
 , or
 /\%Vpattern
+
+== Search the contrary ==
+Write your search, e.g.:
+?^<
+Negate it with \@!
+?^<\@!
