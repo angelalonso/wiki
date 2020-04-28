@@ -3,10 +3,14 @@
 == Changes commited to master, not pushed yet ==
 git reset --soft HEAD~1
 
+== Graph of commit log history ==
+git log --graph --decorate --pretty=oneline --abbrev-commit
+
 == Rebase ==
 git checkout master && git pull
-git checkout <REPO>
-git merge master
+git checkout -
+git rebase master
+git push origin branchName --force
 
 == Remove files from a commit ==
 git reset --soft HEAD^ 
@@ -25,6 +29,7 @@ git checkout origin/master filename
 git reset --hard origin/master
 
 == Squash all commits to rebase easily ==
+
 git checkout master
 git pull
 git checkout -
@@ -32,3 +37,12 @@ git reset --soft origin/HEAD
 git commit -m "squashing commits"
 git rebase master
 git push -f 
+
+git log
+git rebase -i HEAD~[NUMBER OF COMMITS]
+git push origin branchName --force
+git checkout master
+git pull origin master
+git checkout branchName
+git rebase master
+git push origin branchName --force
