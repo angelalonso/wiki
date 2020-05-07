@@ -1,0 +1,73 @@
+= Packets =
+
+== TCP/IP Protocol ==
++------------------+----------------+------------------+---------------+
+| Data Link header | Network header | Transport header | Appl. Data... |
++------------------+----------------+------------------+---------------+
+  
+== Transport Layer == 
+=== TCP ===
+
+0-16      Source port, 16 bits (0-65535)
+17-32     Destination port, 16 bits (0-65535)
+33-64     Sequence number, 32 bits, number of bytes sent
+65-96     Acknowledgment number, 32 bits, number of bytes received
+97-104    Header length, 8 bits = 40 unless options are used
+105-106   Unused, 2 bits
+107       URG, 1 bit, unused
+108       ACK, 1 bit, 1 = received sequence through acknowledgment number
+109       PSH, 1 bit, unused
+110       RST, 1 bit
+111       SYN, 1 bit, 1 = opening connection
+112       FIN, 1 bit, 1 = closing connection
+113-128   Receiver window size, 16 bits (bytes free in buffer, scaled using option in setup)
+129-144   Checksum, 16 bits (XOR of header only)
+145-160   Urgent pointer, 16 bits, unused
+
+Options, variable length (usually 0)
+
+Data, variable length (usually 0-1500) 
+
+==== TCP Connection setup ====
+Protocol to open and close connections.
+
+  Action             Client state        Server state
+  ------             ------------        ------------
+                     CLOSED              LISTEN
+  SYN --->           SYN_SENT            SYN_RCVD
+  <--- SYN+ACK       ESTABLISHED         ESTABLISHED
+                     ...                 ...
+  FIN --->           FIN_WAIT_1          CLOSE_WAIT
+  <--- ACK           FIN_WAIT_2
+  <--- FIN           TIME_WAIT           LAST_ACK
+  ACK --->                               CLOSED
+  Wait 30 seconds    CLOSED
+
+==== TCP Flow control ====
+Protocol to ensure that the sender does not send data faster than the receiver can receive it.
+
+    Receiver sends window size in ACK
+    If window is small, sender waits
+    If window size is 0, sender sends 1 byte (to get updated window in ACK) 
+
+==== TCP Congestion control ====
+Protocol to ensure that the sender does not send data faster than the network can transmit it.
+
+    Tahoe
+        Send 1 pack, wait for ACK (slow start)
+        Send 2, 4, 8, ... up to threshold, wait for ACK
+        If timeout, divide threshold by 2 and go back to 1, 2, 4, 8... 
+    Reno (most commonly used)
+        Fast retransmission after 3 ACKs
+        Fast recovery, cancel slow start after 3 ACKs 
+    Vegas
+        Uses round trip delays to predict congestion 
+
+=== UDP ===
+
+0-16   Source port, 16 bits (0-65535)
+17-32  Destination port, 16 bits (0-65535)
+33-48  Length in bytes, 16 bits (0-65535)
+49-64  Checksum, XOR of header, 16 bits 
+
+If the header checksum fails, the packet is discarded. The data is not error checked. 
