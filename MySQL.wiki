@@ -24,7 +24,9 @@ WHERE country IN('Argentina', 'Brazil')
 
 == Monitoring == 
 === Find out 5 most consuming queries ===
-SELECT USER, TIME, INFO FROM INFORMATION_SCHEMA.PROCESSLIST order by Time desc limit 5 \G;
+SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST WHERE COMMAND != 'Sleep' ORDER BY Time DESC LIMIT 5;
+=== Kill it (Aurora) ===
+CALL mysql.rds_kill(<THE_PROCESS_ID>);
 
 
 == SELECT ALL ==
