@@ -1,5 +1,10 @@
-= MySQL =
+== MySQL ==
 
+== Table schema ==
+DESCRIBE table;
+
+or
+SHOW CREATE TABLE [db_name.]table_name;
 
 == Dumps ==
 === take dumps of a complete Database ===
