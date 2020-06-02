@@ -4,6 +4,25 @@
 +------------------+----------------+------------------+---------------+
 | Data Link header | Network header | Transport header | Appl. Data... |
 +------------------+----------------+------------------+---------------+
+
+=== IP Datagram === 
+Bits
+0-4  Version
+5-8  IHL
+9-16  Type of service
+17-32  Total Length
+33-48  Identification
+49-52  Flags
+53-64  Fragmentation Offset
+65-72  Time To Live
+73-80  Protocol
+81-96  Header Checksum
+97-128  Source Address
+129-160  Destination Address
+161-184  Options
+185-192  Padding
+
+Data
   
 == Transport Layer == 
 === TCP ===

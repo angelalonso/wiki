@@ -1,0 +1,420 @@
+= IPs =
+
+== IPv4 reserved ranges ==
+Address block     -> Address range    Number of addresses    Scope    Description
+0.0.0.0/8 	      -> 0.0.0.0–0.255.255.255 	16777216 	Software 	Current network[3] (only valid as source address).
+10.0.0.0/8 	      -> 10.0.0.0–10.255.255.255 	16777216 	Private network 	Used for local communications within a private network.[4]
+100.64.0.0/10     -> 100.64.0.0–100.127.255.255 	4194304 	Private network 	Shared address space[5] for communications between a service provider and its subscribers when using a carrier-grade NAT.
+127.0.0.0/8       -> 127.0.0.0–127.255.255.255 	16777216 	Host 	Used for loopback addresses to the local host.[3]
+169.254.0.0/16    -> 169.254.0.0–169.254.255.255 	65536 	Subnet 	Used for link-local addresses[6] between two hosts on a single link when no IP address is otherwise specified, such as would have normally been retrieved from a DHCP server.
+172.16.0.0/12     -> 172.16.0.0–172.31.255.255 	1048576 	Private network 	Used for local communications within a private network.[4]
+192.0.0.0/24      -> 192.0.0.0–192.0.0.255 	256 	Private network 	IETF Protocol Assignments.[3]
+192.0.2.0/24      -> 192.0.2.0–192.0.2.255 	256 	Documentation 	Assigned as TEST-NET-1, documentation and examples.[7]
+192.88.99.0/24    -> 192.88.99.0–192.88.99.255 	256 	Internet 	Reserved.[8] Formerly used for IPv6 to IPv4 relay[9] (included IPv6 address block 2002::/16).
+192.168.0.0/16    -> 192.168.0.0–192.168.255.255 	65536 	Private network 	Used for local communications within a private network.[4]
+198.18.0.0/15     -> 198.18.0.0–198.19.255.255 	131072 	Private network 	Used for benchmark testing of inter-network communications between two separate subnets.[10]
+198.51.100.0/24   -> 198.51.100.0–198.51.100.255 	256 	Documentation 	Assigned as TEST-NET-2, documentation and examples.[7]
+203.0.113.0/24    -> 203.0.113.0–203.0.113.255 	256 	Documentation 	Assigned as TEST-NET-3, documentation and examples.[7]
+224.0.0.0/4       -> 224.0.0.0–239.255.255.255 	268435456 	Internet 	In use for IP multicast.[11] (Former Class D network).
+240.0.0.0/4       -> 240.0.0.0–255.255.255.254 	268435455 	Internet 	Reserved for future use.[12] (Former Class E network).
+255.255.255.255/32->255.255.255.255 	1 	Subnet 	Reserved for the "limited broadcast" destination address.[3][13]
+
+== IPv6 Subnets ==
+
+IPv6 subnetting is easier than IPv4. It’s also different. Want to divide or combine a subnet? All that is needed is to add or chop off digits and adjust the prefix length by a multiple of four. No longer is there a need to calculate subnet start/end addresses, usable addresses, the null route, or the broadcast address.
+
+IPv4 had a subnet mask (dotted quad notation) that was later replaced by CIDR masking. IPv6 doesn’t have a subnet mask but instead calls it a Prefix Length, often shortened to “Prefix”. Prefix length and CIDR masking work similarly; The prefix length denotes how many bits of the address define the network in which it exists. Most commonly the prefixes used with IPv6 are multiples of four, as seen in Table IPv6 Subnet Table, but they can be any number between 0 and 128.
+
+Using prefix lengths in multiples of four makes it easier for humans to distinguish IPv6 subnets. All that is required to design a larger or smaller subnet is to adjust the prefix by multiple of four. For reference, see Table IPv6 Subnet Table listing the possible IPv6 addresses, as well as how many IP addresses are contained inside of each subnet.
+IPv6 Subnet Table
+
+Prefix  Subnet Example  Total IP Addresses  # of /64 nets
+4       x::             2^124               2^60
+
+8
+	
+
+xx::
+	
+
+2 120
+	
+
+2 56
+
+12
+	
+
+xxx::
+	
+
+2 116
+	
+
+2 52
+
+16
+	
+
+xxxx::
+	
+
+2 112
+	
+
+2 48
+
+20
+	
+
+xxxx:x::
+	
+
+2 108
+	
+
+2 44
+
+24
+	
+
+xxxx:xx::
+	
+
+2 104
+	
+
+2 40
+
+28
+	
+
+xxxx:xxx::
+	
+
+2 100
+	
+
+2 36
+
+32
+	
+
+xxxx:xxxx::
+	
+
+2 96
+	
+
+4,294,967,296
+
+36
+	
+
+xxxx:xxxx:x::
+	
+
+2 92
+	
+
+268,435,456
+
+40
+	
+
+xxxx:xxxx:xx::
+	
+
+2 88
+	
+
+16,777,216
+
+44
+	
+
+xxxx:xxxx:xxx::
+	
+
+2 84
+	
+
+1,048,576
+
+48
+	
+
+xxxx:xxxx:xxxx::
+	
+
+2 80
+	
+
+65,536
+
+52
+	
+
+xxxx:xxxx:xxxx:x::
+	
+
+2 76
+	
+
+4,096
+
+56
+	
+
+xxxx:xxxx:xxxx:xx::
+	
+
+2 72
+	
+
+256
+
+60
+	
+
+xxxx:xxxx:xxxx:xxx::
+	
+
+2 68
+	
+
+16
+
+64
+	
+
+xxxx:xxxx:xxxx:xxxx::
+	
+
+2 64 (18,446,744,073,709,551,616)
+	
+
+1
+
+68
+	
+
+xxxx:xxxx:xxxx:xxxx:x::
+	
+
+2 60 (1,152,921,504,606,846,976)
+	
+
+0
+
+72
+	
+
+xxxx:xxxx:xxxx:xxxx:xx::
+	
+
+2 56 (72,057,594,037,927,936)
+	
+
+0
+
+76
+	
+
+xxxx:xxxx:xxxx:xxxx:xxx::
+	
+
+2 52 (4,503,599,627,370,496)
+	
+
+0
+
+80
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx::
+	
+
+2 48 (281,474,976,710,656)
+	
+
+0
+
+84
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:x::
+	
+
+2 44 (17,592,186,044,416)
+	
+
+0
+
+88
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xx::
+	
+
+2 40 (1,099,511,627,776)
+	
+
+0
+
+92
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxx::
+	
+
+2 36 (68,719,476,736)
+	
+
+0
+
+96
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx::
+	
+
+2 32 (4,294,967,296)
+	
+
+0
+
+100
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:x::
+	
+
+2 28 (268,435,456)
+	
+
+0
+
+104
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xx::
+	
+
+2 24 (16,777,216)
+	
+
+0
+
+108
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxx::
+	
+
+2 20 (1,048,576)
+	
+
+0
+
+112
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx::
+	
+
+2 16 (65,536)
+	
+
+0
+
+116
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:x::
+	
+
+2 12 (4,096)
+	
+
+0
+
+120
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xx::
+	
+
+2 8 (256)
+	
+
+0
+
+124
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxx::
+	
+
+2 4 (16)
+	
+
+0
+
+128
+	
+
+xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+	
+
+2 0 (1)
+	
+
+0
+
+A /64 is a standard size IPv6 subnet as defined by the IETF. It is smallest subnet that can used locally if auto configuration is desired.
+
+Typically, an ISP assigns a /64 or smaller subnet to establish service on the WAN. An additional network is routed for LAN use. The size of the allocation depends upon the ISP, but it’s not uncommon to see end users receive at least a /64 and even up to a /48.
+
+A tunnel service provider such as tunnelbroker.net run by Hurricane Electric will allocate a /48 in addition to a routed /64 subnet and a /64 interconnect.
+
+Assignments larger than /64 usually adopt the first /64 for LAN and subdivide the rest for requirements such as VPN tunnel, DMZ, or a guest network.
+Special IPv6 Subnets
+
+Special use networks are reserved in IPv6. A full list of these can be found in the Wikipedia IPv6 article. Six examples of IPv6 special networks and their addresses are shown below in IPv6 Special Networks and Addresses.
+IPv6 Special Networks and Addresses
+
+Network
+	
+
+Purpose
+
+2001:db8::/32
+	
+
+Documentation prefix, used for examples, like those find in this book.
+
+::1
+	
+
+Localhost
+
+fc00::/7
+	
+
+Unique Local Addresses (ULA) - also known as “Private” IPv6 addresses.
+
+fe80::/10
+	
+
+Link Local addresses, only valid inside a single broadcast domain.
+
+2001::/16
+	
+
+Global Unique Addresses (GUA) - Routable IPv6 addresses.
+
+ff00::0/8
+	
+
+Multicast addresses
