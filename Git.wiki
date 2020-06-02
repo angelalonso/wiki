@@ -28,6 +28,12 @@ git checkout origin/master filename
 ==== Assuming you want to blow away all commits from your branch (VERY DESTRUCTIVE): ====
 git reset --hard origin/master
 
+== Squash all commits in Branch ==
+git checkout yourBranch
+git reset $(git merge-base master yourBranch)
+git add -A
+git commit -m "one commit on yourBranch"
+
 == Squash all commits to rebase easily ==
 
 git checkout master

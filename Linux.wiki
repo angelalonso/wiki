@@ -76,8 +76,6 @@ sudo tee destination/file < /source/file
 === Append ===
 sudo tee -a destination/file < /source/file
 
-== [[Network]] ==
-
 == [[Procs]] ==
 
 == [[Security]] ==

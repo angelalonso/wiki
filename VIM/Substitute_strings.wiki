@@ -3,5 +3,8 @@
 == Remove New Line when next line starts with x ==
 :%s/\nx/x/g
 
+== Substitute all occurrences of string1 for NEWLINE ==
+:%s/string1/\r/g
+
 == Substitute all occurrences of string1 on a selection ==
 :'<,'>s/string1/string2/g

@@ -39,12 +39,7 @@ The -f tells ssh to go into the background just before it executes the command. 
 
 This essentially forwards the local port 2000 to port 25 on personal-server.com over, with nice benefit of being encrypted. I then simply point my E-mail client to use localhost:2000 as the SMTP server and we're off to the race
 
-== tcpdump capture anything to/from a host, with timestamp and loads of info == 
-tcpdump -nvvvtttt -i any -XX 'host 100.122.229.228'
-
-== tcpdump capture traffic destined to a port ==
-tcpdump -n dst port <port>
-
+== [[Tcpdump]] ==
 == Telnet, Making HTTP Requests ==
 telnet <host> <port>
 GET / HTTP/1.1
