@@ -1,0 +1,12 @@
+= Folding on VIM =
+
+== Fold ==
+zc
+
+== Unfold ==
+l
+za
+
+== YAML ==
+:setlocal foldmethod=indent
+

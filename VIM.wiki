@@ -4,6 +4,7 @@
 [[VIM/Caps]]
 [[VIM/Copy_and_Paste_-_System_Clipboard]]
 [[VIM/Delete_until]]
+[[VIM/Fold]]
 [[VIM/Insert]]
 [[VIM/Hex]]
 [[VIM/Marks]]
