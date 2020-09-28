@@ -26,3 +26,11 @@
 
 [[Net/traceroute]]
 
+=== Find info about interfaces ===
+ip link
+
+=== Find out which route it takes to access example.com ===
+ip r (look for default)
+
+=== Find out port used by process ===
+netstat -tulpan | grep process
