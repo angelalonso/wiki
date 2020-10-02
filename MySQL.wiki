@@ -111,7 +111,7 @@ SELECT User FROM mysql.user where User like '%read-only-%';
 CREATE USER 'testuser'@'%' IDENTIFIED BY 'test123test!';
 
 === Change Password for user ===
-SET PASSWORD FOR 'mmikhalev'@'%' = PASSWORD('password');
+SET PASSWORD FOR 'bob'@'%' = PASSWORD('password');
 
 === Delete user ===
 DROP USER 'testuser'@'%';
@@ -132,9 +132,6 @@ GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%.mydomain.com';
 revoke all privileges, grant option from 'production_sg'@'%';
 
 REVOKE SELECT ON production_%ru.* FROM 'ru_readonly'@'%';
-
-=== Change password ===
-SET PASSWORD FOR 'bob'@'%.example.org' = PASSWORD('auth_string');
 
 === Error on creating a user after deleting it ===
 DROP USER 'testuser'@'%';
