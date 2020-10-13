@@ -24,3 +24,9 @@ pg_dump -U db_user -W -F t db_name > /path/to/your/file/dump_name.tar
 
 == Restore a database ==
 psql -U db_user db_name < dump_name.sql
+
+== show databases ==
+\l
+
+== list users and privileges ==
+\du
