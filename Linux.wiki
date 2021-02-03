@@ -5,17 +5,6 @@ awk -F  ":" '/1/ {print $1}'
 
 == [[BASH]] ==
 
-== CURL ==
-=== send put command ===
-(example taken from Elasticsearch's excluding a node)
-`curl -X PUT -d '{"transient":{"cluster.routing.allocation.exclude._ip":"CLUSTER_HOST_IP"}}' http://localhost:9200/_cluster/settings&pretty=true `
-
-=== Ignore invalid SSL certs ===
-curl -k https://0.0.0.0:443
-
-=== Change the Host header ===
-curl -H "Host: example.com" http://localhost/
-
 == Change console language ==
 sudo apt-get install language-pack-en language-pack-en-base manpages
 sudo apt-get remove language-pack-de language-pack-de-base manpages-de
@@ -86,5 +75,3 @@ sudo tee -a destination/file < /source/file
 
 == [[Users]] ==
 
-== Wget, get recursively whole site ==
-wget --recursive --no-clobber --page-requisites --html-extension --convert-links --domains github.io --no-parent https://facebook.github.io/react-native/

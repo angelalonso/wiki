@@ -1,5 +1,33 @@
 = Network commands =
 
+= Networks Info =
+
+[[Nets/OSI_Model]]
+
+[[Nets/IPs]]
+
+[[Nets/Packets]]
+
+== Tools ==
+
+[[Nets/arp]]
+
+[[Net/arpwatch]]
+
+[[Net/ethereal]]
+
+[[Net/ethereal]]
+
+[[Net/netstat]]
+
+[[Net/nmap]]
+
+[[Tcpdump]]
+
+[[Net/telnet]]
+
+[[Net/traceroute]]
+
 == Check if a port is Open ==
 nc -vz <ip> <port>
 nmap -p <port> <ip>
@@ -9,11 +37,31 @@ nmap -p <port> <ip>
 nc -vz -u <ip> <port>
 nmap -sU -p <port> <ip>
 
+== CURL ==
+=== send put command ===
+(example taken from Elasticsearch's excluding a node)
+`curl -X PUT -d '{"transient":{"cluster.routing.allocation.exclude._ip":"CLUSTER_HOST_IP"}}' http://localhost:9200/_cluster/settings&pretty=true `
+
+=== Ignore invalid SSL certs ===
+curl -k https://0.0.0.0:443
+
+=== Change the Host header ===
+curl -H "Host: example.com" http://localhost/
+
 == Dig examples ==
 dig google.com ANY +noall +answer
 
 == Host examples == 
 nslookup -type=any google.com
+
+=== Find info about interfaces ===
+ip link
+
+=== Find out which route it takes to access example.com ===
+ip r (look for default)
+
+=== Find out port used by process ===
+netstat -tulpan | grep process
 
 == Get Interface and IP to be used to reach an IP ==
 ip route get <IP>
@@ -53,3 +101,6 @@ This essentially forwards the local port 2000 to port 25 on personal-server.com 
 telnet <host> <port>
 GET / HTTP/1.1
 Host: <host>
+
+== Wget, get recursively whole site ==
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --domains github.io --no-parent https://facebook.github.io/react-native/

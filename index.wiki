@@ -23,6 +23,3 @@
 [[Terraform]]
 
 [[VIM]]
-
-[[Nets]]
-
