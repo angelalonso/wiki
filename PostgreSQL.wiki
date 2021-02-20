@@ -30,3 +30,13 @@ psql -U db_user db_name < dump_name.sql
 
 == list users and privileges ==
 \du
+
+== create user ==
+CREATE ROLE "user.test" LOGIN VALID UNTIL 'infinity' PASSWORD '...';
+
+== grant access to a database ==
+GRANT ALL PRIVILEGES ON DATABASE "myapp" TO "user.test";
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "user.test";
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO "user.test";
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO "user.test";
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO "user.test";
