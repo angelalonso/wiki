@@ -3,6 +3,12 @@
 == Changes commited to master, not pushed yet ==
 git reset --soft HEAD~1
 
+== Commits, showing from other PRs ==
+git fetch origin
+git checkout feature-01
+git rebase origin/master
+git push --force
+
 == Graph of commit log history ==
 git log --graph --decorate --pretty=oneline --abbrev-commit
 
