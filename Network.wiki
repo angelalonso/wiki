@@ -18,6 +18,11 @@ sudo arp-scan --interface=<your_Interface> --localnet
 , or
 nmap -sP 192.168.1.0/24
 
+== IPv6 disable == 
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+
 == ping, flood ping ==
 sudo ping -f -i 3 www.google.com      #specify interval between requests 
 
