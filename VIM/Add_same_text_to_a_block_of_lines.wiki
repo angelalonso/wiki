@@ -13,6 +13,12 @@ Created Wednesday 25 May 2016
  - **Esc**, wait 1 second and the inserted text will appear on every line.
 
 == Append at the end ==
+=== Method 1 ===
+ - **Shitf+V** to select the lines
+ - **Ctrl+V** to enter visual block mode
+ - **$**, then **A** to append to all
+ - type text, hit **Esc**
+=== Method 2 ===
  - **Ctrl+V** to enter visual block mode
  - Move Up/Downto select the columns of text in the lines you want to change.
  - **Shift+a** and type the text you want to append.

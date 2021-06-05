@@ -1,0 +1,3 @@
+= Add a sequence of numbers =
+:put =range(1,10)
+
