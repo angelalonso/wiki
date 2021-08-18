@@ -20,7 +20,7 @@
 
 [[Net/netstat]]
 
-[[Net/nmap]]
+[[nmap]]
 
 [[Tcpdump]]
 
