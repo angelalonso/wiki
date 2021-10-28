@@ -7,7 +7,7 @@ git reset --soft HEAD~1
 git fetch origin
 git checkout feature-01
 git rebase origin/master
-git push --force --set-upstream origin feature-01
+[[git]] push --force --set-upstream origin feature-01
 
 == Graph of commit log history ==
 git log --graph --decorate --pretty=oneline --abbrev-commit
