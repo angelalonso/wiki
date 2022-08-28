@@ -32,6 +32,9 @@
 nc -vz <ip> <port>
 nmap -p <port> <ip>
 
+=== Check all
+nc -z -v <ip> 1-65535 2>&1 | grep -v 'Connection refused'
+
 
 === UDP ===
 nc -vz -u <ip> <port>
