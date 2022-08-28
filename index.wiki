@@ -20,6 +20,8 @@
 
 [[RAID]]
 
+[[Rust]]
+
 [[Terraform]]
 
 [[VIM]]

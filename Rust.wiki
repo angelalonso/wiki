@@ -1,0 +1,59 @@
+= Rust quick how tos =
+
+  == Argument passing ==
+The sanctioned/default/de facto library for this is clap
+
+    === Using arguments on cargo run ===
+```
+cargo run -- <argument1> <argument2>
+```
+
+  == Comments ==
+- The form //! is used to refer to the “current” item, the module that's just been enteredby the compiler
+  - We can just use it at the top of our files, for instance
+- The form /// annotates whatever is immediately following it
+
+
+  == Files, reading ==
+```
+use std::fs::File;
+use std::io::BufReader;
+use std::io::prelude::*;
+
+fn main() {
+  let f = File::open("readme.md").unwrap();
+  let reader = BufReader::new(f);
+  for line_ in reader.lines() {
+    let line = line_.unwrap();
+    println!("{} ({} bytes long)", line, line.len());
+  }
+}
+```
+
+  == Functions ==
+-  Using ! as a return type indicates to the Rust compiler that this function never returns
+
+  == STDIN, read from ==
+```
+let stdin = io::stdin();
+let reader = stdin.lock(); \\ This produces a similar mechanism to the reader on BufReader
+```
+
+  == Substraction that goes only down to 0 ==
+```
+let seven: usize = 7;
+seven.saturating_sub(9); \\ this never goes below 0 and avoids crashing
+```
+
+  == Types ==
+    === Make an Alias of another Type ===
+```
+type File = String;
+```
+    
+    === Make a copy of another Type, have it treated as a completely new one ===
+```
+struct File(String);
+```
+This is called the newtype pattern
+

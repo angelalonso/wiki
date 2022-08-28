@@ -40,3 +40,53 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "user.test";
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO "user.test";
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO "user.test";
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO "user.test";
+
+== Gio notes == 
+# Postgres
+    # Connect to an instance from a jumphost
+    $ psql -h write.postgres.endpoint.fd-k8s.com -p 5432 -d postgres -U yourUser
+
+    # Commands that help
+    \l - Display database
+    \c - Connect to database
+    \dn - List schemas
+    \dt - List tables inside public schemas
+    \dt schema1. - List tables inside particular schemas. For eg: 'schema1'.
+
+    # Check groups for each role
+    SELECT
+          r.rolname,
+          ARRAY(SELECT b.rolname
+                FROM pg_catalog.pg_auth_members m
+                JOIN pg_catalog.pg_roles b ON (m.roleid = b.oid)
+                WHERE m.member = r.oid) as memberof
+    FROM pg_catalog.pg_roles r
+    WHERE r.rolname NOT IN ('pg_signal_backend','rds_iam',
+                            'rds_replication','rds_superuser',
+                            'rdsadmin','rdsrepladmin')
+    ORDER BY 1;
+
+    # Check Role permissions on tables and schemas
+    SELECT grantee AS user, CONCAT(table_schema, '.', table_name) AS table, 
+        CASE 
+            WHEN COUNT(privilege_type) = 7 THEN 'ALL'
+            ELSE ARRAY_TO_STRING(ARRAY_AGG(privilege_type), ', ')
+        END AS grants
+    FROM information_schema.role_table_grants
+    GROUP BY table_name, table_schema, grantee;
+
+    # Create a role and give him read access
+    CREATE ROLE "your-new-role" WITH LOGIN PASSWORD 'aGoodPassword';
+    ALTER ROLE "your-new-role" VALID UNTIL 'infinity';
+    GRANT CONNECT ON DATABASE your_schema TO "your-new-role";
+    ## Here I use schema public but I think you can also use the `your_schema`
+    GRANT USAGE ON SCHEMA public TO "your-new-role";
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "your-new-role";
+    GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO "your-new-role";
+
+    # Update permisions to a role
+    \c your_schema
+    GRANT SELECT ON your_table TO "your-new-role";
+
+    # Check permisions for your role 
+    SELECT * FROM information_schema.role_table_grants WHERE grantee="your-new-role";
