@@ -1,0 +1,13 @@
+/home/aaf/Software/Dev/wiki/aws-scraper/target/debug/deps/quote-f3410f4506682779.rmeta: /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/lib.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ext.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/format.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ident_fragment.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/to_tokens.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/runtime.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/spanned.rs
+
+/home/aaf/Software/Dev/wiki/aws-scraper/target/debug/deps/libquote-f3410f4506682779.rlib: /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/lib.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ext.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/format.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ident_fragment.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/to_tokens.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/runtime.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/spanned.rs
+
+/home/aaf/Software/Dev/wiki/aws-scraper/target/debug/deps/quote-f3410f4506682779.d: /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/lib.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ext.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/format.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ident_fragment.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/to_tokens.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/runtime.rs /home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/spanned.rs
+
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/lib.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ext.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/format.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/ident_fragment.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/to_tokens.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/runtime.rs:
+/home/aaf/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-1.0.16/src/spanned.rs:

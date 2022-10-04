@@ -1,0 +1,9 @@
+ - get all repos
+ curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/orgs/awsdocs/repos
+ - get name and description, add to vimwiki
+ - Set a list of stuff to look for
+   - Add to vimwiki
+ - Check for changes to exiting
+ - vimwiki to reader
