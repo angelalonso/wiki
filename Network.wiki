@@ -28,6 +28,9 @@
 
 [[Net/traceroute]]
 
+== Check traffic on an interface ==
+bmon
+
 == Check if a port is Open ==
 nc -vz <ip> <port>
 nmap -p <port> <ip>

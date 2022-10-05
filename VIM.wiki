@@ -1,7 +1,3 @@
-[[VIM/Add_same_text_to_a_block_of_lines]]
-[[VIM/Add_list_of_numbers]]
-[[VIM/Autocompletion]]
-[[VIM/Autoindent]]
 [[VIM/Caps]]
 [[VIM/Copy_and_Paste_-_System_Clipboard]]
 [[VIM/Delete_until]]

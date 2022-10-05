@@ -1,0 +1,50 @@
+# Devops
+
+## Values
+Culture
+Automation
+Measurement
+Sharing
+
+##Principles
+Systems thinking -  From concept to cash
+Amplify Feedback Loops
+Continuous experimentation
+
+
+##Methods
+- Principles
+  - People over Processes over Tools
+  - Continuous Delivery
+  - Lean management
+    - Work in smll batches
+    - Work in Progress limits
+    - Fedback Loops
+    - Visualization
+  - Change Control
+    - Eliminate fragile artifacts
+    - Create a repeatable build Process
+    - Manage dependencies
+    - Create an Environment of Continuous improvement
+  - Infrastructure as Code
+    - System treated as Code
+    - Checked into source Control
+    - Reviewed, built and tested
+    - Managed programmatically
+
+##Practices
+- Incident command system
+- Developers on call
+- Public status pages
+- Blameless postmortems
+- Embedded teams
+- The cloud
+- Andon cords - Stop the line! I found an issue!
+- Dependency Injection - Loosely coupled dependencies
+- Blue-green deployment
+- Chaos Monkey
+
+##Tools
+- Programmable
+- Verifiable
+- Well behaved
