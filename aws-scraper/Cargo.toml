@@ -1,0 +1,13 @@
+[package]
+name = "aws-scraper"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+csv = "1.1.6"
+reqwest = "0.11.10"
+select = "0.5.0"
+tokio = { version = "1.0", features = ["full"] }
+
