@@ -10,6 +10,9 @@ GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
 echo -e "${RED} Do you want it to be REMOVED AUTOMATICALLY?${NOCOLOR}"
 
+== Editor, switch writing a command to default editor from comand line ==
+CTRL+x, CTRL+e
+
 == For loop, repeat x times ==
 for i in {1..15}; do <x>; done
 

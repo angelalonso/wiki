@@ -3,3 +3,9 @@
  Select the block, then:
 
 :sort
+
+== Sorting with case insensitive ==
+:sort i
+
+== Using system wide sort command ==
+:sort f
