@@ -19,6 +19,22 @@ for i in {1..15}; do <x>; done
 == Get the numbers from a string ==
 NUMBER=$(echo "I am 999 years old." | tr -dc '0-9')
 
+== Keys ==
+=== move to the beinning of line ===
+CTRL+a
+=== "kill" a word back ===
+CTRL+w
+=== "kill" to the end of line ===
+CTRL+k
+=== "kill" to the beinning of line ===
+CTRL+u
+=== Paste what you killed ===
+CTRL+y
+=== Paste your previous successful command's argument ===
+ALT+.
+
+
+
 == String, remove one from another ==
 `foo=${string#"$prefix"}`
 `foo=${foo%"$suffix"}`
