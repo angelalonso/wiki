@@ -4,6 +4,7 @@
 [[VIM/Fold]]
 [[VIM/Insert]]
 [[VIM/Hex]]
+[[VIM/LineNumbers]]
 [[VIM/Marks]]
 [[VIM/Move]]
 [[VIM/Remove_trailing_whitespaces]]

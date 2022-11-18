@@ -1,0 +1,25 @@
+= VIM Line numbers =
+
+== Show Line numbers ==
+
+== Hide Line numbers ==
+
+== Line numbers ==
+=== Show ===
+set number
+, or
+set nu
+=== Hide ===
+set nonumber
+, or
+set nu!
+
+== Relative Line numbers ==
+=== Show ===
+set relativenumber
+, or
+set rnu
+=== Hide ===
+set norelativenumber
+, or
+set !rnu
