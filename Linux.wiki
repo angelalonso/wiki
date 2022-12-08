@@ -72,10 +72,6 @@ sudo tee -a destination/file < /source/file
 == [[SystemInfo]] ==
 
 == [[Troubleshooting]] ==
-More (to be moved)
-sudo iotop
-iostat -xt 1
-sar - how to enable?
 
 == [[Users]] ==
 

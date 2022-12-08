@@ -1,7 +1,29 @@
-= Trobuleshooting Course =
+= Troubleshooting Course =
+
+== General, constant monitoring ==
+sar - how to enable?
+
+== IO monitoring ==
+sudo iotop
+iostat -xt 1
+
+== Top for a given process ==
+top -p <PID> 
+== Top for a given process + associated theads attached ==
+top -Hp <PID> 
+
+== list processes on any shell ==
+ps --user <username>
+
+== What is a Process using ==
+pmap <PID>
+
+== What files a PID has open ==
+lsof -p <PID>
 
 == Info about Hardware ==
 lshw
+
 == Info about Hardware for a group only==
 lshw -C multimedia / storage ...
 
@@ -11,3 +33,12 @@ lspci
 == Network, release and renew DHCP lease ==
 dhclient -r eth0
 dhclient eth0
+
+== Network, traceroute on steroids ==
+mtr www.google.com
+mtr -z www.google.com #this shows the AS numbers and check who belong together (e.g.: several routers belonging to your ISP)
+
+== Networking, Sockets open ==
+netstat -tulpn
+ss -natp
+sudo lsof -iTCP -sTCP:ESTABLISHED 
