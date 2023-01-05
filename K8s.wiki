@@ -4,6 +4,9 @@
 
 == [[K8s/etcd]] ==
 
+== Get all the host and paths alongside the service they belong on all namespaces ==
+kubectl get ingress -A -o=jsonpath="{range .items[*]}{range .spec.rules[*]}{'host:'}{.host}{range .http.paths[*]},{'path:'}{.path},{'service:'}{.backend.service.name}{end}{'\n'}{end}{end}"
+
 == Dashboard, connect to it ==
 kubectl proxy
 , then access it through the IP and port you get
