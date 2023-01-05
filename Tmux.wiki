@@ -1,0 +1,8 @@
+
+== Enter command mode ==
+<CTRL-a> :
+
+== Change background of this pane ==
+Command mode, then
+select-pane -P 'bg=red'
+
