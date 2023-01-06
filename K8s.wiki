@@ -1,5 +1,7 @@
 = K8s =
 
+== [[CKA]] ==
+
 == [[K8s/Troubleshooting]] ==
 
 == [[K8s/etcd]] ==
