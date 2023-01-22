@@ -1,0 +1,2 @@
+= VIM - Add WHATEVER at the end of several lines =
+<Ctrl>+V <SELECT LINES> $A <WHATEVER> <Esc>

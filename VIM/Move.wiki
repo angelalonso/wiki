@@ -4,3 +4,10 @@
 
 How to move from ) to the previous (:
 *%*
+
+== changes == 
+Move to previous change on the file:
+g;
+
+Move to next change on the file:
+g,

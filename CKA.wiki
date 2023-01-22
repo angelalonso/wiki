@@ -5,12 +5,11 @@ Check exam description https://training.linuxfoundation.org/certification/certif
 Follow the course and take notes https://www.linkedin.com/learning/exam-tips-certified-kubernetes-administrator-cka/what-is-the-cka-exam?autoplay=true&resume=false&u=2110716
 -> Match Parts with exam description
 - Check videos again
-Read through the book and take notes
-- Match Parts with exam description
-- Read it through
 Check system requirements https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad
 Check FAQs https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks
 Look for other courses on the exam, for specific parts
+- Check the book on CKAD too
+  -> Do the exercises
 
 == Parts ==
 https://github.com/cncf/curriculum
