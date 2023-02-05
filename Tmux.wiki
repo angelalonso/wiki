@@ -1,8 +1,56 @@
+= Tmux =
+== "Leader" key ==
+<CTRL-b>
 
 == Enter command mode ==
-<CTRL-a> :
+<Leader> :
 
 == Change background of this pane ==
 Command mode, then
 select-pane -P 'bg=red'
+
+
+== Create window ==
+<Leader> c
+
+== Next window ==
+<Leader> n
+
+== Previous window ==
+<Leader> p
+
+== List windows ==
+<Leader> w
+
+== Rename window ==
+<Leader> ,
+
+== Kill window ==
+<Leader> &
+
+
+
+== Split vertical ==
+<Leader> %
+
+== Split Horizontal ==
+<Leader> "
+
+== Go to Next pane ==
+<Leader> o
+
+== Go to Previous pane ==
+<Leader> ;
+
+== Kill pane ==
+<Leader> x
+
+== Zoom/Focus into pane ==
+<Leader> z
+
+== Move pane to left ==
+<Leader> {
+
+== Move pane to right ==
+<Leader> }
 
