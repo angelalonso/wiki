@@ -2,6 +2,22 @@
 == Default Leader Key ==
 \
 
+== Split vertical ==
+<CTRL-w> v
+
+== Split horizontal ==
+<CTRL-w> s
+
+== Move between "splitteds" ==
+=== up ===
+<CTRL-w> k
+=== down ===
+<CTRL-w> j
+=== left ===
+<CTRL-w> l
+=== right ===
+<CTRL-w> h
+
 [[VIM/Add_at_end_several_lines]]
 [[VIM/Caps]]
 [[VIM/Copy_and_Paste_-_System_Clipboard]]

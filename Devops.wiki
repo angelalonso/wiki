@@ -1,5 +1,37 @@
-# Devops
+= Devops =
+== Tech List ==
+Ambient Mesh - Solution from Istio to use Data plane instead of sidecars
+ArgoCD - Declarative Gitops CD tool for K8s
+Artifact Registry - GCloud, Container Registry + Language packages (Maven, NPM)
+BigQuery - Enterprise Data Warehouse by Google - serverless architecture
+DynamoDB - NoSQL key-value serverless Database
+Flagger - Progressive Delivery tool that automates releases of apps on K8s (Canary, A/B...)
+Flux - Tool for keeping K8s clusters in sync with sources of configuration (Git)
+GitOps - by Weaveworks, developer platform to avoid the need of K8s operation
+Grafana - Monitor, Alerting, Visualization...etc of data
+Helm - Package manager for Kubernetes
+Istio - K8s extension for programmable, app-aware network using Envoy Service Proxy. A service Mesh
+Jenkins - Extensible Automation server that can serve as CI or even CD
+Kasten K10 - Data Management platform, used for backups, DR and app mobility for k8s applications
+Keda - K8s Event-driven autoscaling
+Kube-bench - tool to check that a k8s installation passes the CIS Kubernetes Benchmark.
+Kubecost - Kubernetes cost monitoring and management
+Kyverno - Policy Engine for K8s
+Linkerd - Service Mesh
+Magalix - cloud security enabler, leveraging security-as-code and compliance-as-code
+Monokle - Set of tools for creating and maintaining high-quality k8s Yaml configs
+Popeye - Kubernetes cluster resources sanitizer. It just provides a report
+Prometheus - Open Source System monitoring and Alerting toolkit
+Rancher - Enterprise K8s Management, with several products
+Skaffold - Toll to handle the workflow for app build, push and deploy into k8s
+SOPS - Editor of encrypted files supporting Yaml, Json...etc and encrypts with AWS/GCP KMS, PGP...
+Tanzu - modular, cloud native application platform that enables vital DevSecOps outcomes(sic)
+Velero - open source tool to safely backup, restore, DR, and migrate k8scluster resources
+Verrazzano - Oracle's container platform to deploy, secure, manage container workloads, supporting k8s
+Werf - tool to implement full software delivery process within Kubernetes (CICD?)
 
+
+== Course ==
 ## Values
 Culture
 Automation
