@@ -20,6 +20,7 @@ Kyverno - Policy Engine for K8s
 Linkerd - Service Mesh
 Magalix - cloud security enabler, leveraging security-as-code and compliance-as-code
 Monokle - Set of tools for creating and maintaining high-quality k8s Yaml configs
+Packer - 
 Popeye - Kubernetes cluster resources sanitizer. It just provides a report
 Prometheus - Open Source System monitoring and Alerting toolkit
 Rancher - Enterprise K8s Management, with several products

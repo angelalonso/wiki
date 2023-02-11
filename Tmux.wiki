@@ -19,6 +19,10 @@ select-pane -P 'bg=red'
 == Previous window ==
 <Leader> p
 
+== Last/Previous window  you were on==
+<Leader> l
+(very useful to quickly move between two windows back and forth)
+
 == List windows ==
 <Leader> w
 
