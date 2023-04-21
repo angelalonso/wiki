@@ -1,0 +1,415 @@
+= AWS =
+
+== Key consideration on migrating to AWS ==
+Operational Costs
+Workforce productivity
+Cost avoidance
+Operational resilience
+Business agility
+
+== Key product categories of AWS ==
+Security
+Compute
+Storage
+Database
+Network/Content Delivery
+HA Architecture
+Analytics
+
+== Key Components of AWS ==
+EC2 - Computing
+Route53 - DNS
+S3 - Storage
+EBS - Allows Storing constant volumes of data
+Cloudwatch - watch critical areas of AWS, alert
+SES - Send emails, regular SMTP or RESTful API
+VPC - Virtual Private Cloud
+Cloudformation - Infrastructure as Code
+ELS - Load Balancing
+AWS Security
+AWS Config
+AWS Databases 
+
+== AWS Well architeced framework ==
+Operational Excellence
+Security
+Reliability
+Performance efficiency
+Cost Optimization
+
+== Basic types of cloud services and AWS products built based on them ==
+Computing - EC2, Elasticbeanstalk, Lambda, Autoscaling, Lightsat
+Storage - S3, Glacier, EBS, EFS
+Networking - VPC, Cloudfront, Route53
+TODO: how does cloudfront work?
+
+== Three Major Categories of Cloud Services and AWS products based on them ==
+Public, Private and Hybrid cloud
+Infrastructure as a service, Platform as a service, Software as a service
+(TODO: WHAT???)
+
+
+== AZ, Region, Edge Location ==
+AZ
+- Logical Datacenter in a region
+- Each AZ has separate power, network, connectivity
+- An AZ can be several Datacenters, if they are close they count as one AZ
+- e.g.: us-east-1a
+Region
+- Framework in which we have all the available providers
+  - e.g.: for EC2, Storage, DBs...we need a region to build our services into
+- Geographical location with collection of AZs mapped to physical Datacenters on given region
+- e.g.: us-east-1
+Edge Location
+- Locations where end user services are provided
+- Endpoints for AWS used for caching content
+- way more than regions (150 currently)
+
+== S3 ==
+Simple Storage Service
+Store eny volume of data, retrieve at any time
+Scalability, availability, data protection and performance
+Store data to be used by tools such as Big Data Analytics, ML, AI
+Has REST interface, uses Secure HMAC SHA1 auth keys
+=== How to configure a bucket to serve static assets for a public web ===
+Bucket policy with public read access to all objects
+=== Storage class availabe on S3 ===
+S3 standard
+S3 standard Infrequent Access
+S3 One-Zone Infrequent Access
+S3 Reduced Redundancy Storage
+S3 Intelligent-Tiering
+S3 Outposts
+Glacier Instant retrieval
+Glacier Flexible retrieval (Former S3 Glacier)
+Glacier Deep Archive
+
+
+=== Total Number of buckets by default ===
+100, but can be increased by requesting to Amazon
+
+== AMI ==
+Amazon Machine Image
+Provides the necessary information to launch an instance
+
+== Autoscaling ==
+Allows provisioning and launching new instances whenever there is a demand
+Allows to automatically increase or decrease resource capacity in relation to the demand
+Monitors applications and automatically adjusts capacity to maintain steady predictable performance at lowest possible cost
+=== How to add existing instance to new ASG ===
+EC2 console
+Select instance
+Actions -> Instance settings -> Attach to Autoscaling Group
+Select new ASG
+Attach it to the instance
+Edit instance if needed
+
+== VPC ==
+Virtual Private Cloud
+Resource placement + connectivity + Security
+You can add EC2 and RDS as needed
+You can also define communication to other VPCs, regions, AZs
+=== VPC not resolving server through DNS... ===
+You need to enable DNS hostname resolution
+=== Security products and features in VPC ===
+Security Groups - Act as firewall for the EC2 instances, control in/out traffic at instance level
+=== Network Access Control Lists - Firewall for the subnets, control in/out traffic at subnet level ===
+
+== Cloudformation ==
+Create template on JSON or YAML
+Save on S3
+Use CF to call the bucket and create stack
+CF reads the file, understands services involved, the order, relationship between services...then provisions services one by one
+=== Elements of Cloudformation template ===
+Template parameters
+Output values
+Data tables
+Resources
+File format version
+
+== Upgrade or downgrade a System with Zero Downtime ==
+Open EC2 Console
+Choose OS AMI
+Launch instance with the new instance type
+Install updates
+Install applications
+Test the instance
+Move DNS to it
+
+== SQS ==
+Fully managed Message Queueing Service. Send, receive, store any amount of messages between apps
+High protection through encryption, delivery without loss. Reduce complexity.
+- Standard queues
+  - Standard, unlimited nr. of transactions/sec and min of one message delivery option
+- FIFO
+  - Ensure order of messages is preserved
+
+== DynamoDB ==
+Fully managed, Serverless, key-value NoSQL DB service
+Built in security, in-mem caching, continuous backups, data export, auto multi-region replication
+Extensively supports internet-scale apps requiring high concurrency and connections for multiple users with Millions req/s
+
+== S3 Glacier ==
+Storage class built for data archiving. Retrieve data with high flexibility and performance
+Also, low-cost
+Glacier Instant Retrieval storage, Glacier Flexible Retrieval and Glacier Deep Archive
+
+== Redshift ==
+Helps analyze data stored on DWH, DBs and Data lakes using ML and AWS-designed HW
+Uses SQL to analyze structured and semi-structured data 
+It automatically creates, trains and deploys ML modles to create predictive insights
+
+== ELB ==
+it automatically redirects incoming app traffic to destinations and virtual appliances
+Application Load Balancer, Gateway Load Balancer, Network Load Balancer (TODO: see https://tutorialsdojo.com/application-load-balancer-vs-network-load-balancer-vs-classic-load-balancer/ )
+
+== Elastic Beanstalk ==
+Autoscaling feature to adapt to demands
+Flexibility of EC2 instance, processor...etc
+
+== Cloudwatch ==
+Monitoring service with actionable insights
+Visibility on AWS resources and applications on AWS and on-premises
+
+== Snowball ==
+Snowball Edge Storage Optimized devices (storage) and Snowball Edge Computer Optimized devices (computing)
+The storage one offers Block Storage and S3 Object Storage
+
+== Cloudtrail ==
+Monitors and records user activity on AWS infrastructure
+Identifies suspitious activities through Cloudtrail Insights and EventBridge (TODO: Eventbridge)
+
+== Elasticache ==
+In-memory caching service that acts as a data store. Useful to accelerate performance (access in microseconds)
+It can be used as cache, but also DB, messabe broker and queue
+
+== Lambda ==
+Serverless/event-driven computing service
+Allows running code without provisioning or managing servers
+It also has scaling capabilities
+
+== ECS ==
+AKA ECR or Amazon Elastic Container Registry
+Compresses and Encrypts images, and controls access to them
+
+== EFS ==
+Serverless, Elastic File System
+Allows adding or removing files on the filesystem without provisioning and management
+It creates File systems using EC2 launch instance wizard, EFS console, CLI and API
+
+== Aurora ==
+MySQL and PostgreSQL relational DB
+Fully mananged by AWS, automates provisioning, setup, backups and patching
+
+== RDS ==
+Relational Database Service that allows setup, operation and scaling of Relational DBs in the Cloud
+Automates administrative tasks such as provisioning, DB setup and backups (TODO: differences RDS and Aurora)
+Offers familiar Engines such as Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle DB and SQL server.
+=== Provisioned IOPS vs. Standard RDS ===
+Use Provisioned IOPS when you have batch-oriented workloads (no manual intervention)
+Provisioned IOPS delivers high IO rates, but expensive
+
+== Route 53 ==
+Highly scalable Cloud Domain Name System (DNS)
+It connects with AWS infrastructure such as EC2, ELB and S3 buckets
+It allows for DNS health checks to monitor applications continuously for their abilitz to recover from failures (TODO: check that)
+=== Difference between Domain and Hosted Zone ===
+Domain is a collection of data describing self-contained administrative and technical unit (TODO: ???)
+Hosted Zone is a container holding information about how to route traffic on the internet for a specific domain
+=== How does Route53 provide  HA and low latency ===
+Globally distributed servers
+Dependency
+Optimal Locations
+
+
+== Kinesis ==
+Collects, processes and analyses real time streaming data to generate insights
+That real time data can be video, audio, app logs, IoT telemetry and website clickstreams
+
+== Key Pairs ==
+These are secure login information for your VMs, Public goes to the VM, Private is never shared but stored securely on your laptop. (TODO: how does auth actually work, how is private checked?)
+
+== Instance types ==
+General Purpose
+Computer Optimized
+Memory Optimized
+Storage Optimized
+Accelerated Computing
+(TODO: names in AWS?)
+
+== DDoS Attack ==
+An attacker accesses a website creating multiple sessions until there are no more slots left for legitimate traffic.
+AWS Shield
+AWS WAF
+AWS Route 53
+AWS Cloudfront
+VPC
+(TODO: what are Shield and WAF?)
+
+== A service is not available in a particular region... ==
+Not all AWS services are available in all regions from day 0. It normally starts on some regions and gets implemented gradually on the rest.
+The only solution left is to switch to the nearest Region providing that service.
+
+== Types of virtualization in AWS ==
+Hardware Virtual Machine (HVM)
+Paravirtualization (PV)
+Paravirtualization on HVM
+
+== AWS services that are not region-based ==
+IAM
+Route 53
+Web Application Firewall
+Cloud Front
+
+== NAT Gateways vs. NAT Instances ==
+Availability
+  - NAT Gateway
+    - Highly Available
+  - NAT Instance
+    - Use a script to manage failover between instances
+Bandwidth
+  - NAT Gateway
+    - Scale up to 45Gbps
+  - NAT Instance
+    - Depends on bandwitdh of the instance type
+Maintenance
+  - NAT Gateway
+    - Fully Managed by AWS
+  - NAT Instance
+    - Patches, Updates...are on you fully
+Performance
+  - NAT Gateway
+    - Software is optimized to handle NAT traffic
+  - NAT Instance
+    - It uses a generic AMI configured to perform NAT
+Cost
+  - NAT Gateway
+    - Charged depending on Nr. of gateways, Duration and amount of data sent through the GWs
+  - NAT Instance
+    - Charged depending on Nr. of instances, Durationg and Instance type+size
+Type+Size
+  - NAT Gateway
+    - Uniform offering
+  - NAT Instance
+    - Predict workload, choose instance type and size
+Public IP
+  - NAT Gateway
+    - Choose EIP to associate GW on creation
+  - NAT Instance
+    - Assign EIP or public IP with an instance
+Private IP
+  - NAT Gateway
+    - Automatically selected from subnet's IP address range
+  - NAT Instance
+    - Assign a specific private IP fromt he subnet's IP address range when you launch the instance
+Security Groups
+  - NAT Gateway
+    - Not possible to associate SGs with NAT Gateways
+  - NAT Instance
+    - Associate with your NAT instance and resources behind the instance to control in and outbound traffic
+Network ACLs
+  - NAT Gateway
+    - Use a network ACL to control traffic to and from the subnet in which the NAT GW resides
+  - NAT Instance
+    - Use a network ACL to control traffic to and from the subnet in which the NAT instance resides
+
+== Elastic transcoder ==
+Media transcoding in the cloud that allows us to support several resolutions and formats like laptop, tablets, phones...for video
+
+== AWS Shield ==
+Protects webs from the following DDoS attacks:
+- UDP Floods (TODO: what is this?)
+- TCP SYN Floods (TODO: what?)
+- HTTP GET AND POST FLoods (TODO: what?)
+
+== EMR ==
+Cloud Big Data Platform
+Helps run large-scale distributed data processing tasks, Machine Learning apps, and interactive SQL queries
+Also you can run and scale big data workloads using Open Source frameworks like Apache Spark, Hive and Presto
+
+== Features on Amazon cloud search ==
+Boolean searches
+Prefix searches
+Range searches
+Entire text search
+Autocomplete Advice
+
+== Layers of Cloud Architecture explained in AWS training == 
+Cloud controller
+Cluster controller
+Storage controller
+Node controller
+
+== Importance of buffer on AWS ==
+A buffer helps integrate and synchronize various components in AWS and helps maintain equilibrium by linking multiple apparatus to deliver quick services at uniform rate
+
+== Types of volumes in EBS ==
+General purpose
+Magnetic
+Provisioned IOPS
+Cold HDD
+Throughput optimized
+=== Difference between EBS and instance store ===
+EBS is permanent storage in which the data can be restored later
+Instance Store is temporary storage that is physically attached to a host machine
+
+== How to auto-delete old snapshots ==
+Take snapshots of the EBS on S3
+Use AWS Ops automator to handle snapshots automatically
+
+== EC2 ==
+=== Security Best practices EC2 ===
+Only allowing trusted hosts or networks to access ports on an instance
+Only opening up permissions required and disable password login for instances launched from your AMI
+Using IAM to control access to AWS resources
+=== Pricing Model for EC2 ===
+On-Demand
+Reserved
+Spot
+Dedicated Hosts
+=== Difference between stopping and terminating an instance ===
+Stop -> Normal shutdown on instance and moved to stopp state
+Terminate -> Same but EBS volumes attached to it are deleted and cannot be recovered
+=== Difference between Instance and AMI ===
+AMI is template consisting of Software configuration
+=== What is T2 instance ===
+Allow to burst to higher performance when workload demands it with a moderate baseline performance
+These are General purpose and low in cost
+
+== RDS vs. DynamoDB vs. Redshift ==
+RDS is a DB manager for relational DBs
+DynamoBD is NoSQL DB for unstructured data
+Redshift is DWH for data analysis
+
+== Benefits of AWS's disaster recovery ==
+It avoids the cost of having a second physical site
+It ranges from DR for small customer workload to Failover at scale
+
+== To transfer huge amounts of data, which Snow- option is best? == 
+Snowball is a data transport solution to move big amounts of data in-out of an AWS region
+Snowball Edge adds computing functions on top of the Data Transport solution
+Snowmobile is an Exabyte-scale migration service that allows to transfer data up to 100PB
+
+== Advantages of IAM ==
+Allows administrator to provide multiple users and groups with granular access
+It further gives federated access, which allows to grant applications and users access to resources without having to create IAM roles
+=== Policies for users' passwords ===
+minimum length, have at least one special character
+Requirements for Uppercase, lowercase, numbers, non-alphanumeric
+Automatic Pass expiration, prevent reuse, request for pass reset on next sign in
+Have users contact account admin when their password was allowed to expire
+=== IAM role vs IAM user ===
+IAM role is an entity that defines a set of permissions for making AWS service requests, while IAM user is permanent long-term credentials used to interact with AWS services directly
+In the IAM role trusted entities, like IAM users, apps or an AWS service, assume roles whereas the IAM user has direct access
+
+== Cloudformation vs. Elastic Beanstalk ==
+Cloud formation Helps provision and describe infrastructure resources. It supports  the infrastructure needs for applications, legacy and existing
+
+== How to use AWS WAF to monitor apps ==
+AWS WAF protects from web exploitations
+It helps control traffic flow to apps
+On WAF you can also create custom rules to block common attack patterns
+Allow all requests/Prevent all requests/Count all requests
+Beanstalk provides an environment that makes it easy to deploy and run apps in the cloud. It is combined with Dev tools to help manage lifecycle of apps.
+
+

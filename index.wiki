@@ -1,6 +1,8 @@
 = Index =
 
-[[00_me]]
+[[AWS]]
+
+[[K8s]]
 
 [[Devops]]
 
@@ -9,8 +11,6 @@
 [[Elasticsearch]]
 
 [[Git]]
-
-[[K8s]]
 
 [[Linux]]
 

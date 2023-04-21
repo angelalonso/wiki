@@ -1,23 +1,46 @@
 = Devops =
 == Tech List ==
 Ambient Mesh - Solution from Istio to use Data plane instead of sidecars
+Amplify - 
 ArgoCD - Declarative Gitops CD tool for K8s
 Artifact Registry - GCloud, Container Registry + Language packages (Maven, NPM)
 BigQuery - Enterprise Data Warehouse by Google - serverless architecture
+Cognito - 
 DynamoDB - NoSQL key-value serverless Database
+ELK Elastic Stack
+  Elasticsearch, Logstash, Kibana
+  Kibana - visualize
+  Logstash - Send logs to ES. Originally only system logs, now much more. Inputs->Filters->Outputs 
+  X-Pack - adds functionalities (security, Monitoring of ELK, Machine Learning (for abnormality detection), Graph
+  SQL - EKS uses Query DSL butit can translate SQL
+  Beats - Agents sending data to Logstash or Elasticsearch (Packetbeat, Filebeat, Heartbeat, Auditbeat...)
 Flagger - Progressive Delivery tool that automates releases of apps on K8s (Canary, A/B...)
 Flux - Tool for keeping K8s clusters in sync with sources of configuration (Git)
 GitOps - by Weaveworks, developer platform to avoid the need of K8s operation
 Grafana - Monitor, Alerting, Visualization...etc of data
 Helm - Package manager for Kubernetes
+Hyper-V
+  HW virtualization
+  Hypervisor talks to RAM, HD, Network...directly, without using the OS
 Istio - K8s extension for programmable, app-aware network using Envoy Service Proxy. A service Mesh
-Jenkins - Extensible Automation server that can serve as CI or even CD
+Jenkins
+  Extensible Automation server that can serve as CI or even CD
+  OpenSource automation server written in Java. Automates Dev process via CI and facilitates CD
+  Continuous Integration tool
+  Devs -> repo -> CI server with tests -> tester or back to Dev -> Release and deploy or back from tester to Dev
+  Hudson was the original Jenkins :)
+  Many plugins
+  Commit > Build > Tests > Release > Deploy > Deliver
+  -> CI server -> Build server (e.g.: Maven as a plugin) -> Test Server (e.g.: Selenium as plugin) -> Release to prod server
 Kasten K10 - Data Management platform, used for backups, DR and app mobility for k8s applications
 Keda - K8s Event-driven autoscaling
 Kube-bench - tool to check that a k8s installation passes the CIS Kubernetes Benchmark.
 Kubecost - Kubernetes cost monitoring and management
 Kyverno - Policy Engine for K8s
 Linkerd - Service Mesh
+Loki (Grafana)
+  Log aggregation tool
+  requires an agent on each server (app server), Promtail
 Magalix - cloud security enabler, leveraging security-as-code and compliance-as-code
 Monokle - Set of tools for creating and maintaining high-quality k8s Yaml configs
 Packer - 

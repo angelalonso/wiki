@@ -1,5 +1,39 @@
 = K8s =
 
+== Architecture ==
+=== Control Plane ===
+API server
+  Exposes the kubernetes API
+etcd
+  Consistent, HA key value store for all cluster data
+Scheduler
+  watched for newly created pods without an assigned node, and assigns one to them.
+  resources, constraints, affinity and antiaffinity, locality, deadlines...
+Controller Manager
+  runs controller processes like
+    node controller
+    job controller
+    endpointslice controller (link between service and pods)
+    serviceaccounts controller 
+Cloud controller manager
+  embeds cloud-specific control logic.
+  some examples:
+    node controller (e.g.: checking with AWs if the node is alive)
+    route controller
+    service controller - managing Cloud provider LBs
+=== Node Components ===
+Kubelet
+  Agent maintaining running pods and providing Kubernetes runtime environment
+  Takes a set of PodSpecs and makes sure the containers described are running and healthy
+Kubeproxy
+  network proxy implementing part of the services concept
+  maintains network rules on nodes
+  it uses the OS's own packet filtering layer if available, otherwise it forwards traffic itself
+Container runtime
+  Software responsible for running Containers
+=== Addons ===
+DNS
+
 == [[CKA]] ==
 
 == [[K8s/Troubleshooting]] ==

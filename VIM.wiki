@@ -18,6 +18,28 @@
 === right ===
 <CTRL-w> h
 
+== Motions ==
+=== Go to last change ===
+`.
+=== Select all within quotes ===
+vi"
+=== Select all within parenthesis===
+vi(
+
+== Surround Selection with Parentheses ==
+Select text, then:
+xi()<Esc>P
+
+== Insert Tricks ==
+=== Insert sequence of numbers on each line ===
+- Place your cursor on the first line
+- <CTRL-V> and move down until all lines are selected (create them in advance if not there)
+- Insert starting number, e.g.: I<space>1<Esc> - This generates a set of lines with 1 on them
+- Go to the second line with the 1, put the prompt on top of that 1.
+- <CTRL-V> and move down until you select all lines but the first
+- g <CTRL-A>
+
+
 [[VIM/Add_at_end_several_lines]]
 [[VIM/Caps]]
 [[VIM/Copy_and_Paste_-_System_Clipboard]]
